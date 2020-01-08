@@ -10,8 +10,8 @@ import com.github.xmuyulab.sparkscRNAseq.utils.StringUtils
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.SparkConf
 import org.kohsuke.args4j.{Argument, CmdLineParser, Option}
-import com.sparkSTAR.yulab.utils.StringUtils
-import com.sparkSTAR.yulab.logs.LOG
+import com.github.xmuyulab.sparkscRNAseq.utils.StringUtils
+import com.github.xmuyulab.sparkscRNAseq.logs.LOG
 
 object scAnalysis {
   //Default arguments
