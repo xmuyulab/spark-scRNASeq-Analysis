@@ -1,7 +1,7 @@
 /**
  * Author: liuyu
  */
-package com.sparkSTAR.yulab.data.basic
+package com.github.xmuyulab.sparkscRNAseq.data.basic
 
 import java.io.Serializable
 

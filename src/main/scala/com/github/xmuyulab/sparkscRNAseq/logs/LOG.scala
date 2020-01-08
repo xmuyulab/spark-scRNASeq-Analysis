@@ -1,7 +1,7 @@
 /**
  * Author: liuyu
  */
-package com.sparkSTAR.yulab.logs
+package com.github.xmuyulab.sparkscRNAseq.logs
 
 import org.slf4j.LoggerFactory
 import ch.qos.logback.core.util.StatusPrinter

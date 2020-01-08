@@ -1,11 +1,11 @@
 /**
  * Author: liuyu
  */
-package com.sparkSTAR.yulab.fileIO
+package com.github.xmuyulab.sparkscRNAseq.fileio
 
+import com.github.xmuyulab.sparkscRNAseq.data.basic.FastqRecord
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
-
 import com.sparkSTAR.yulab.data.basic.FastqRecord
 
 trait FileLoader {

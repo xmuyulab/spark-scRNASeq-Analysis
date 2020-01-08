@@ -1,7 +1,7 @@
 /**
  * Author: liuyu
  */
-package com.sparkSTAR.yulab.utils
+package com.github.xmuyulab.sparkscRNAseq.utils
 
 object StringUtils {
 
