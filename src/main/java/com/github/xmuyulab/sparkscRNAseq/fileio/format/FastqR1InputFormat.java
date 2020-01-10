@@ -24,6 +24,7 @@ import java.io.InputStream;
 
 public class FastqR1InputFormat extends FileInputFormat<Void,Text> {
 
+  //interface RecordReader<K,V>
   public static class FastqR1RecordReader extends RecordReader<Void,Text>{
     private long start;
     private long end;
@@ -47,10 +48,41 @@ public class FastqR1InputFormat extends FileInputFormat<Void,Text> {
 
       CompressionCodecFactory codecFactory=new CompressionCodecFactory(conf);
       CompressionCodec codec=codecFactory.getCodec(file);
+
+      if(codec==null){
+        positionAtFirstRecord(fileIn);
+        inputStream=fileIn;
+      }else{
+        if(start!=0){
+          throw new RuntimeException("Start position for compressed file is not 0!(found "+start+")");
+        }
+      }
     }
+
+    private void positionAtFirstRecord(FSDataInputStream stream) throws IOException{
+      Text buffer=new Text();
+
+      stream.seek(start);
+      LineReader reader=new LineReader(stream);
+      int bytesRead=0;
+      do{
+        bytesRead=reader.readLine(buffer,(int)Math.min(MAX_LINE_LENGTH,end-start));
+        int bufferLength=buffer.getLength();
+        if(bytesRead>0&&(buffer.getLength()<=0||buffer.getBytes()[0]!='@')){
+          start+=bytesRead;
+        }else{
+          long backtrackPosition=start+bytesRead;
+          bytesRead=reader.readLine(buffer)
+        }
+      }
+    }
+
   }
 
-  public RecordReader<Void,Text> createRecordReader{
+  public RecordReader<Void,Text> createRecordReader(InputSplit genericSplit,TaskAttemptContext context)
+    throws IOException,InterruptedException{
+    context.setStatus(genericSplit.toString());
+    return new FastqR1RecordReader(context.getConfiguration(),(FileSplit)genericSplit);
   }
 
 }
