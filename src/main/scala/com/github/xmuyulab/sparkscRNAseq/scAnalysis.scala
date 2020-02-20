@@ -44,6 +44,7 @@ object scAnalysis {
     }
 
     val sc=new SparkContext(conf)
-
+    val pipelineName="myPipeline"
+    
   }
 }
