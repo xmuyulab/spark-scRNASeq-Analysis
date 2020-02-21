@@ -18,7 +18,7 @@ object FileUtils {
     FilenameUtils.getFullPathNoEndSeparator(path)
   }
 
-  def join(basePath:String,fileName:String):Any={
+  def join(basePath:String,fileName:String):String={
     FilenameUtils.concat(basePath,fileName)
   }
 
