@@ -1,5 +1,11 @@
 package com.github.xmuyulab.sparkscRNAseq.execptions
 
-object ResourceException {
+/**
+ * Author:liuyu
+ * @param msg
+ */
+
+class ResourceException(msg:String)
+  extends RuntimeException(msg){
 
 }
