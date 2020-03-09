@@ -44,7 +44,7 @@ object NormalFileLoader extends FileLoader{
     records
   }
 
-  def loadFastqPairToRdd(sc:SparkContext,
+  override def loadFastqPairToRdd(sc:SparkContext,
                                   filePath1:String,
                                   filePath2:String):RDD[(String,(String,String,Int))]={
     val fastqR1Rdd=loadFastqR1ToRdd(sc,filePath1)
