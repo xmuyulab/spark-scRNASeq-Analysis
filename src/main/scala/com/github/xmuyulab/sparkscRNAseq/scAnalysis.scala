@@ -11,6 +11,8 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.SparkConf
 import org.kohsuke.args4j.{Argument, CmdLineParser, Option}
 import com.github.xmuyulab.sparkscRNAseq.utils.StringUtils
+import com.github.xmuyulab.sparkscRNAseq.engine.Pipeline
+import com.github.xmuyulab.sparkscRNAseq.fileio.NormalFileLoader
 import com.github.xmuyulab.sparkscRNAseq.logs.LOG
 
 object scAnalysis {
@@ -45,6 +47,13 @@ object scAnalysis {
 
     val sc=new SparkContext(conf)
     val pipelineName="myPipeline"
-    
+    //val pipeline=Pipeline(pipelineName,sc)
+
+    val extractFastqRdd=NormalFileLoader.loadFastqPairToRdd(sc,fastq1,fastq2)
+
+    extractFastqRdd.foreach(print)
+
+    //val mappingProcess=JNI
+
   }
 }
