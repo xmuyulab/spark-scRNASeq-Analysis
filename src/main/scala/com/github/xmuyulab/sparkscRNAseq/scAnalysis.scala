@@ -51,7 +51,7 @@ object scAnalysis {
 
     val extractFastqRdd=NormalFileLoader.loadFastqPairToRdd(sc,fastq1,fastq2)
 
-    extractFastqRdd.foreach(print)
+    extractFastqRdd.foreach(line=>log.INFO(line._1))
 
     //val mappingProcess=JNI
 
