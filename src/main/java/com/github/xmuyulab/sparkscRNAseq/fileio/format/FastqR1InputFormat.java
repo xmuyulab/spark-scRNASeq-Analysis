@@ -141,6 +141,10 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
 
     @Override
     public Text getCurrentKey(){
+      currentValue[0]=new Text();
+      currentValue[1]=new Text();
+      currentValue[2]=new Text();
+      currentValue[3]=new Text();
       return new Text(currentValue[1].toString().substring(0,16));
     }
 
