@@ -50,7 +50,7 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
     //
     private InputStream inputStream;
     //
-    private Text[] currentValue;
+    private Text[] currentValue=new Text[4];
     //
     private byte[] newline="\n".getBytes();
 
@@ -136,8 +136,6 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
 
     @Override
     public boolean nextKeyValue() throws IOException,InterruptedException{
-      currentValue=new Text[4];
-
       return next(currentValue);
     }
 
