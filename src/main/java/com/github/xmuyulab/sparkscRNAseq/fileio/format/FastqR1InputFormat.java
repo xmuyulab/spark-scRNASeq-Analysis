@@ -174,6 +174,9 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
         Text readName=new Text();
 
         for(int i=0;i<4;i++){
+          if(value[i]==null){
+            continue;
+          }
           value[i].clear();
         }
 
