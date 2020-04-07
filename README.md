@@ -9,10 +9,15 @@ project structure
 |-src<br>
 -|-main<br>
 --|-java<br>
----|-resource<br>
-----|-logback.xml                           日志配置文件<br>
---|-scala<br>
 ---|-com.github.xmuyulab.sparkscRNAseq<br>
+----|-fileio<br>
+-----|-format<br>
+------|-FastqR1InputFormat.java             newAPIHadoopFile从fastq R1生成rdd
+------|-FastqR2InputFormat.java             newAPIHadoopFile从fastq R2生成rdd
+--|-resource<br>
+---|-logback.xml                            日志配置文件<br>
+--|-scala<br>
+---|-com.github.xmuyulab.sparkscRNAseq<br>  
 ----|-const<br>
 -----|-BinTools.scala                       读取配置文件<br>
 ----|-data<br>
@@ -21,3 +26,5 @@ project structure
 ----|-engine<br>
 -----|-Pipeline.scala                       运行流程<br>
 ----|-scAnalysis.scala                      启动文件<br>
+
+#
