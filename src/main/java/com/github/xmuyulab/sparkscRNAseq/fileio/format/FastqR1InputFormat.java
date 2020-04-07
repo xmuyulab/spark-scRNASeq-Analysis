@@ -141,7 +141,12 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
 
     @Override
     public Text getCurrentKey(){
-      return new Text(currentValue[3].toString().substring(0,16));
+      return new Text(currentValue[1].toString().substring(0,16));
+    }
+
+    @Override
+    public Text getCurrentValue(){
+      return new Text(currentValue[1].toString().substring(16)+currentValue[0].toString());
     }
 
     @Override
@@ -155,10 +160,6 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
     @Override
     public void close() throws IOException{
       inputStream.close();
-    }
-
-    public Text getCurrentValue(){
-      return new Text(currentValue[3].toString().substring(16)+currentValue[0].toString());
     }
 
     public boolean next(Text[] value) throws IOException{
