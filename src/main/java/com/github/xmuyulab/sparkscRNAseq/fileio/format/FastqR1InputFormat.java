@@ -139,6 +139,10 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
 
     @Override
     public boolean nextKeyValue() throws IOException,InterruptedException{
+      currentValue1=new Text();
+      currentValue2=new Text();
+      currentValue3=new Text();
+      currentValue4=new Text();
       return next(currentValue1,currentValue2,currentValue3,currentValue4);
     }
 
@@ -175,7 +179,6 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
       }
       try{
         Text readName=new Text();
-
         value1.clear();
         value2.clear();
         value3.clear();
