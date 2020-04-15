@@ -5,13 +5,14 @@ package com.github.xmuyulab.sparkscRNAseq
 
 import java.util
 
+import com.github.xmuyulab.sparkscRNAseq.data.basic.FastqRecord
 import com.github.xmuyulab.sparkscRNAseq.logs.LOG
 import com.github.xmuyulab.sparkscRNAseq.utils.StringUtils
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.SparkConf
 import org.kohsuke.args4j.{Argument, CmdLineParser, Option}
 import com.github.xmuyulab.sparkscRNAseq.utils.StringUtils
-import com.github.xmuyulab.sparkscRNAseq.engine.Pipeline
+//import com.github.xmuyulab.sparkscRNAseq.engine.Pipeline
 import com.github.xmuyulab.sparkscRNAseq.fileio.NormalFileLoader
 import com.github.xmuyulab.sparkscRNAseq.logs.LOG
 
@@ -40,6 +41,7 @@ object scAnalysis {
     val conf=new SparkConf()
       .setAppName("SparkStar")
       .set("spark.driver.maxResultSize","24g")
+      .registerKryoClasses(Array(classOf[FastqRecord]))
 
     if(conf.getOption("spark.master").isEmpty){
       conf.setMaster("local[%d]".format(Runtime.getRuntime.availableProcessors()))
