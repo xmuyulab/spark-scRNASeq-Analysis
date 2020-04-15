@@ -49,7 +49,10 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
     //
     private InputStream inputStream;
     //
-    private Text[] currentValue;
+    private Text currentValue1;
+    private Text currentValue2;
+    private Text currentValue3;
+    private Text currentValue4;
     //
     private byte[] newline="\n".getBytes();
 
@@ -135,19 +138,22 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
 
     @Override
     public boolean nextKeyValue() throws IOException,InterruptedException{
-      currentValue=new Text[4];
+      currentValue1=new Text();
+      currentValue2=new Text();
+      currentValue3=new Text();
+      currentValue4=new Text();
 
-      return next(currentValue);
+      return next(currentValue1,currentValue2,currentValue3,currentValue4);
     }
 
     @Override
     public Text getCurrentKey(){
-      return new Text(currentValue[0].toString().substring(0,currentValue[0].toString().length()-16));
+      return new Text(currentValue1.toString().substring(0,currentValue1.toString().length()-16));
     }
 
     @Override
     public Text getCurrentValue(){
-      return new Text(currentValue[0].toString().substring(currentValue[0].toString().length()-16)+"@"+currentValue[1].toString());
+      return new Text(currentValue1.toString().substring(currentValue1.toString().length()-16)+"@"+currentValue2.toString());
     }
 
     @Override
@@ -163,18 +169,19 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
       inputStream.close();
     }
 
-    public boolean next(Text[] value) throws IOException{
+    public boolean next(Text value1,Text value2,Text value3,Text value4) throws IOException{
       if(pos>=end){
         return false;
       }
       try{
         Text readName=new Text();
 
-        for(int i=0;i<4;i++){
-          value[i].clear();
-        }
+        value1.clear();
+        value2.clear();
+        value3.clear();
+        value4.clear();
 
-        boolean gotData=lowLevelFastqR1Read(readName,value);
+        boolean gotData=lowLevelFastqR1Read(readName,value1,value2,value3,value4);
 
         return gotData;
       }catch(EOFException e){
@@ -182,7 +189,7 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
       }
     }
 
-    protected boolean lowLevelFastqR1Read(Text readName,Text[] value) throws IOException{
+    protected boolean lowLevelFastqR1Read(Text readName,Text value1,Text value2,Text value3,Text value4) throws IOException{
 
       readName.clear();
 
@@ -197,16 +204,16 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
             +makePositionMessage()+".Line: "+readName+".\n");
       }
 
-      value[0].append(readName.getBytes(),0,readName.getLength());
+      value1.append(readName.getBytes(),0,readName.getLength());
 
       //sequence
-      appendLineInto(value[1],false);
+      appendLineInto(value2,false);
 
       //separator,'+'
-      appendLineInto(value[2],false);
+      appendLineInto(value3,false);
 
       //quality
-      appendLineInto(value[3],false);
+      appendLineInto(value4,false);
 
       return true;
 
