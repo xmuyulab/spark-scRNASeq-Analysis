@@ -23,9 +23,16 @@ object BinTools {
     if(tmpPath.startsWith("file:")) tmpPath.substring(5) else tmpPath
   }
 
+//  val starLibPath = {
+//    val tmpPath = FileUtils.join(binDirPath, "libstarjni.so")
+//    if(tmpPath.startsWith("file:")) tmpPath.substring(5) else tmpPath
+//  }
+
   val processOptimize={
     val properties=new Properties()
     properties.load(new FileInputStream(confPath))
     properties.getProperty("processOptimize").toBoolean
   }
+
+
 }
