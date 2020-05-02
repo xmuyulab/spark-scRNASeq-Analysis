@@ -72,7 +72,7 @@ object scAnalysis {
 
     val extractFastqRdd = NormalFileLoader.loadFastqPairToRdd(sc, fastq1, fastq2)
 
-    //extractFastqRdd.foreach(line => print(line._1))
+    extractFastqRdd.foreach(line => print(line._1.toString() + ".\n"))
 
   }
 }
