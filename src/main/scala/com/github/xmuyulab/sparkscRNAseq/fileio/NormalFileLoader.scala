@@ -44,20 +44,21 @@ object NormalFileLoader extends FileLoader{
     records
   }
 
-  override def loadFastqPairToRdd(sc:SparkContext,
-                                  filePath1:String,
-                                  filePath2:String):RDD[(String,(String,String,Int))]={
-    val fastqR1Rdd=loadFastqR1ToRdd(sc,filePath1)
-    val fastqR2Rdd=loadFastqR2ToRdd(sc,filePath2)
-    val whitelist=sc.makeRDD(fastqR1Rdd.map(line=>(line._1,1))
-                            .reduceByKey((a,b)=>a+b)
-                            .sortBy(_._2,false)
-                            .take(100))
-    fastqR1Rdd.join(whitelist)
-              .map(line=>
-                    (new Text(line._2._1.toString().substring(10,line._2._1.toString().length()-16)),(line._1.toString()+line._2._1.toString().substring(0,10),line._2._2)))
-              .join(fastqR2Rdd)
-              .map(line=>(line._1.toString(),(line._2._1._1,line._2._2.toString(),line._2._1._2)))
+  override def loadFastqPairToRdd(sc : SparkContext,
+                                  filePath1 : String,
+                                  filePath2 : String) : Void ={//RDD[(String, (String, String, Int))]={
+    val whitelist = sc.parallelize(loadFastqR1ToRdd(sc,filePath1)
+                                    .groupByKey()
+                                    .sortBy(_._2.size,false)
+                                    .take(100))
+                                    .foreach(line => print(line._1))
+    null
+//    val fastqR2Rdd = loadFastqR2ToRdd(sc,filePath2)
+//              .join(whitelist)
+//              .map(line =>
+//                (new Text(line._2._1.toString().substring(10,line._2._1.toString().length()-16)),(line._1.toString()+line._2._1.toString().substring(0,10),line._2._2)))
+////              .join(fastqR2Rdd)
+////              .map(line=>(line._1.toString(),(line._2._1._1,line._2._2.toString(),line._2._1._2)))
   }
 
 }
