@@ -29,5 +29,6 @@ Programmers need to use the same name as a nonnative method.A nonnative method(a
 #Global and Local References
 1.Local references are valid for the duration of a native method call,and are automatically freed after the native method call returns<br>
 2.Global references remain valid until they are explicitly freed.<br>
+
 #Reference
 1.http://icejoywoo.github.io/2018/07/25/spark-jni.html

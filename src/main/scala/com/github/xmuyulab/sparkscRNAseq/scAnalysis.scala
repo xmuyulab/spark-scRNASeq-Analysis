@@ -68,11 +68,11 @@ object scAnalysis {
 
     val sc = new SparkContext(conf)
     val pipelineName = "myPipeline"
-    //val pipeline=Pipeline(pipelineName,sc)
+    val pipeline = Pipeline(pipelineName, sc)
 
     val extractFastqRdd = NormalFileLoader.loadFastqPairToRdd(sc, fastq1, fastq2)
 
-    extractFastqRdd.foreach(line => print(line._1.toString() + ".\n"))
+    // extractFastqRdd.foreach(line => print(line._1.toString + ".\n"))
 
   }
 }

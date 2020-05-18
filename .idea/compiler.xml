@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sparkSTAR" />
         <module name="yulab" />
+        <module name="spark-scRNASeq-Analysis" />
       </profile>
     </annotationProcessing>
   </component>

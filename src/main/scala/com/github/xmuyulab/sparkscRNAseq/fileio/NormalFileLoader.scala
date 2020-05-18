@@ -51,6 +51,7 @@ object NormalFileLoader extends FileLoader{
                                     .groupByKey()
                                     .sortBy(_._2.size,false)
                                     .take(100))
+                                    //.foreach(line => println(line._1.toString))
     val fastqR2Rdd = loadFastqR2ToRdd(sc,filePath2)
                                     .join(whitelist)
     fastqR2Rdd

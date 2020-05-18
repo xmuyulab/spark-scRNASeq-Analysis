@@ -11,12 +11,12 @@ object FastqRecord extends Serializable{
   }
 }
 
-class FastqRecord(val compressFlag:Boolean,
-                  val descriptionLine:String,
-                  val sequence: Array[Byte],
-                  val quality:Array[Byte]
+class FastqRecord(val compressFlag : Boolean,
+                  val descriptionLine : String,
+                  val sequence : Array[Byte],
+                  val quality : Array[Byte]
                  ) extends Serializable {
-  override def toString: String={
+  override def toString: String = {
     "%s\n%s\n+\n%s".format(descriptionLine,sequence,quality)
   }
 }

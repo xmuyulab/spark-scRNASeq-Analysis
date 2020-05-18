@@ -6,8 +6,8 @@ package com.github.xmuyulab.sparkscRNAseq.resource
 
 trait Resource {
 
-  val key:String
+  val key: String
 
-  def isSet:Boolean
+  def isSet: Boolean
 
 }
