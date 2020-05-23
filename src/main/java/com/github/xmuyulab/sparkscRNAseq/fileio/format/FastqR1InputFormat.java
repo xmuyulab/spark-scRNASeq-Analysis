@@ -25,8 +25,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.util.LineReader;
 
 
-public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
-
+public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
   //The record reader breaks the data into key/value pairs for input to the Mapper
   // @method initialize(InputSplit split,TaskAttemptContext context) throws IOException,InterruptedException
   //  called once at initialization
@@ -35,8 +34,7 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
   // @method getCurrentValue() get the current value @return the object that was read
   // @method getProgress() the current progress of the record reader through its data
   // @method close() close the record reader
-  public static class FastqR1RecordReader extends RecordReader<Text,Text>{
-
+  public static class FastqR1RecordReader extends RecordReader<Text, Text> {
     private long start;
 
     private long end;
@@ -55,25 +53,25 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
     private Text currentValue3;
     private Text currentValue4;
     //
-    private byte[] newline="\n".getBytes();
+    private byte[] newline = "\n".getBytes();
 
     //
     private static final int MAX_LINE_LENGTH=10000;
 
     //A section of an input file
-    public FastqR1RecordReader(Configuration conf,FileSplit split) throws IOException{
+    public FastqR1RecordReader(Configuration conf, FileSplit split) throws IOException {
       //The file containing this split's data
-      file=split.getPath();
+      file = split.getPath();
       //The position of the first byte
-      start=split.getStart();
+      start = split.getStart();
 
-      end=start+split.getLength();
+      end = start+split.getLength();
 
-      FileSystem fs=file.getFileSystem(conf);
-      FSDataInputStream fileIn=fs.open(file);
+      FileSystem fs = file.getFileSystem(conf);
+      FSDataInputStream fileIn = fs.open(file);
 
       CompressionCodecFactory codecFactory = new CompressionCodecFactory(conf);
-      CompressionCodec codec        = codecFactory.getCodec(file);
+      CompressionCodec codec = codecFactory.getCodec(file);
 
       if (codec == null) { // no codec.  Uncompressed file.
         positionAtFirstRecord(fileIn);
@@ -138,22 +136,22 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
     }
 
     @Override
-    public boolean nextKeyValue() throws IOException,InterruptedException{
-      currentValue1=new Text();
-      currentValue2=new Text();
-      currentValue3=new Text();
-      currentValue4=new Text();
-      return next(currentValue1,currentValue2,currentValue3,currentValue4);
+    public boolean nextKeyValue() throws IOException {
+      currentValue1 = new Text();
+      currentValue2 = new Text();
+      currentValue3 = new Text();
+      currentValue4 = new Text();
+      return next(currentValue1, currentValue2, currentValue3, currentValue4);
     }
 
     @Override
-    public Text getCurrentKey(){
+    public Text getCurrentKey() {
       return new Text(currentValue2.toString().substring(0,16));
     }
 
     @Override
     public Text getCurrentValue(){
-      return new Text(currentValue2.toString().substring(16)+currentValue1.toString());
+      return new Text(currentValue2.toString().substring(16) + currentValue1.toString());
     }
 
     @Override
@@ -169,38 +167,38 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
       inputStream.close();
     }
 
-    public boolean next(Text value1,Text value2,Text value3,Text value4) throws IOException{
-      if(pos>=end){
+    public boolean next(Text value1, Text value2, Text value3, Text value4) throws IOException {
+      if(pos >= end) {
         return false;
       }
-      try{
-        Text readName=new Text();
+      try {
+        Text readName = new Text();
         value1.clear();
         value2.clear();
         value3.clear();
         value4.clear();
 
-        boolean gotData=lowLevelFastqR1Read(readName,value1,value2,value3,value4);
+        boolean gotData = lowLevelFastqR1Read(readName, value1, value2, value3, value4);
 
         return gotData;
-      }catch(EOFException e){
+      } catch(EOFException e) {
         throw new RuntimeException("unexpected end of file in fastq record");
       }
     }
 
-    protected boolean lowLevelFastqR1Read(Text readName,Text value1,Text value2,Text value3,Text value4) throws IOException{
+    protected boolean lowLevelFastqR1Read(Text readName, Text value1, Text value2, Text value3, Text value4) throws IOException {
 
       readName.clear();
 
-      long skipped=appendLineInto(readName,true);
+      long skipped = appendLineInto(readName,true);
 
-      if(skipped==0){
+      if(skipped == 0) {
         return false;
       }
 
-      if(readName.getBytes()[0]!='@'){
+      if(readName.getBytes()[0] != '@') {
         throw new RuntimeException("unexpected fastq record didn't start with '@' at "
-                    +makePositionMessage()+".Line: "+readName+".\n");
+                    + makePositionMessage() + ".Line: " + readName + ".\n");
       }
 
       value1.append(readName.getBytes(),0,readName.getLength());
@@ -218,19 +216,19 @@ public class FastqR1InputFormat extends FileInputFormat<Text,Text> {
 
     }
 
-    private long appendLineInto(Text dest,boolean eofOk) throws EOFException,IOException{
+    private long appendLineInto(Text dest,boolean eofOk) throws IOException{
 
-      Text buf=new Text();
-      int bytesRead=lineReader.readLine(buf,MAX_LINE_LENGTH);
+      Text buf = new Text();
+      int bytesRead = lineReader.readLine(buf,MAX_LINE_LENGTH);
 
-      if(bytesRead<0||(bytesRead==0&&!eofOk)){
+      if(bytesRead < 0 || (bytesRead == 0 && !eofOk)){
         throw new EOFException();
       }
 
       dest.append(buf.getBytes(),0,buf.getLength());
       dest.append(newline,0,1);
 
-      pos+=bytesRead;
+      pos += bytesRead;
 
       return bytesRead;
 

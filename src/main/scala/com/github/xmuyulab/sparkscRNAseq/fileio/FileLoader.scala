@@ -12,5 +12,5 @@ trait FileLoader {
 
   def loadFastqPairToRdd(sc: SparkContext,
                          filePath1: String,
-                         filePath2: String) : RDD[(Text, (Text, Iterable[Text]))];
+                         filePath2: String) :  RDD[(Text, (Text, (Text, Text)))];
 }
