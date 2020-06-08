@@ -52,6 +52,7 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
     private Text currentValue2;
     private Text currentValue3;
     private Text currentValue4;
+    private String tmp1;
     //
     private byte[] newline = "\n".getBytes();
 
@@ -111,7 +112,7 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
         int bufferLength = buffer.getLength();
 
         if (bytesRead > 0 &&
-            (bufferLength <= 0 || buffer.getBytes()[0] != '@')) {
+                (bufferLength <= 0 || buffer.getBytes()[0] != '@')) {
           start += bytesRead;
         } else {
           long backtrackPosition = start + bytesRead;
@@ -146,16 +147,17 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
 
     @Override
     public Text getCurrentKey() {
-      return new Text(currentValue2.toString().substring(0,16));
+      return new Text(currentValue2.toString().substring(0, 16));
     }
 
     @Override
     public Text getCurrentValue(){
-      return new Text(currentValue2.toString().substring(16) + currentValue1.toString());
+      tmp1 = currentValue1.toString();
+      return new Text(currentValue2.toString().substring(16) + tmp1.substring(0, tmp1.length() - 16));
     }
 
     @Override
-    public float getProgress() throws IOException, InterruptedException {
+    public float getProgress() {
       if (start == end)
         return 1.0f;
       else
@@ -198,7 +200,7 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
 
       if(readName.getBytes()[0] != '@') {
         throw new RuntimeException("unexpected fastq record didn't start with '@' at "
-                    + makePositionMessage() + ".Line: " + readName + ".\n");
+                + makePositionMessage() + ".Line: " + readName + ".\n");
       }
 
       value1.append(readName.getBytes(),0,readName.getLength());
@@ -246,8 +248,8 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
   // @param context - the information about the task
   // @return a new record reader
   public RecordReader<Text,Text> createRecordReader(
-      InputSplit genericSplit,
-      TaskAttemptContext context) throws IOException,InterruptedException{
+          InputSplit genericSplit,
+          TaskAttemptContext context) throws IOException,InterruptedException{
     context.setStatus(genericSplit.toString());
     return new FastqR1RecordReader(context.getConfiguration(),(FileSplit)genericSplit);
   }

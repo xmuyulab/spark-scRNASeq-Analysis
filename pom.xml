@@ -3,7 +3,6 @@
   <groupId>com.sparkSTAR.yulab</groupId>
   <artifactId>yulab</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <inceptionYear>2008</inceptionYear>
 
   <properties>
     <java.version>1.8</java.version>
@@ -22,6 +21,14 @@
           <execution>
             <id>compile-scala</id>
             <phase>validate</phase>
+            <goals>
+              <goal>add-source</goal>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>scala-compile-first</id>
+            <phase>process-resources</phase>
             <goals>
               <goal>add-source</goal>
               <goal>compile</goal>

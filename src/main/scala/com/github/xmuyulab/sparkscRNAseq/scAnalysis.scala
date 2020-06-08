@@ -16,6 +16,7 @@ import com.github.xmuyulab.sparkscRNAseq.utils.StringUtils
 //import com.github.xmuyulab.sparkscRNAseq.engine.Pipeline
 import com.github.xmuyulab.sparkscRNAseq.fileio.NormalFileLoader
 import com.github.xmuyulab.sparkscRNAseq.logs.LOG
+import org.apache.hadoop.io.Text;
 
 object scAnalysis {
   //Default arguments
@@ -67,12 +68,13 @@ object scAnalysis {
     }
 
     val sc = new SparkContext(conf)
-    val pipelineName = "myPipeline"
-    val pipeline = Pipeline(pipelineName, sc)
+    //  val pipelineName = "myPipeline"
+    //  val pipeline = Pipeline(pipelineName, sc)
 
     val extractFastqRdd = NormalFileLoader.loadFastqPairToRdd(sc, fastq1, fastq2)
 
-    // extractFastqRdd.foreach(line => print(line._1.toString + ".\n"))
+    val mapping = JNIStarInitProcess.runStar(sc, extractFastqRdd)
 
+    //  extractFastqRdd.repartition(1).saveAsTextFile("file:/home/liuyu/data/extractedFastqRdd_nq")
   }
 }

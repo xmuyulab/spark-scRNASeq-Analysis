@@ -60,19 +60,19 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
     private static final int MAX_LINE_LENGTH=10000;
 
     //A section of an input file
-    public FastqR2RecordReader(Configuration conf,FileSplit split) throws IOException{
+    public FastqR2RecordReader(Configuration conf, FileSplit split) throws IOException {
       //The file containing this split's data
-      file=split.getPath();
+      file = split.getPath();
       //The position of the first byte
-      start=split.getStart();
+      start = split.getStart();
 
-      end=start+split.getLength();
+      end = start + split.getLength();
 
-      FileSystem fs=file.getFileSystem(conf);
-      FSDataInputStream fileIn=fs.open(file);
+      FileSystem fs = file.getFileSystem(conf);
+      FSDataInputStream fileIn = fs.open(file);
 
       CompressionCodecFactory codecFactory = new CompressionCodecFactory(conf);
-      CompressionCodec codec        = codecFactory.getCodec(file);
+      CompressionCodec codec = codecFactory.getCodec(file);
 
       if (codec == null) { // no codec.  Uncompressed file.
         positionAtFirstRecord(fileIn);
@@ -91,7 +91,7 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
     }
 
     @Override
-    public void initialize(InputSplit split,TaskAttemptContext context) throws IOException,InterruptedException{
+    public void initialize(InputSplit split,TaskAttemptContext context) {
 
     }
 
@@ -112,7 +112,7 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
         int bufferLength = buffer.getLength();
 
         if (bytesRead > 0 &&
-            (bufferLength <= 0 || buffer.getBytes()[0] != '@')) {
+                (bufferLength <= 0 || buffer.getBytes()[0] != '@')) {
           start += bytesRead;
         } else {
           long backtrackPosition = start + bytesRead;
@@ -143,17 +143,18 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
       currentValue3=new Text();
       currentValue4=new Text();
 
-      return next(currentValue1,currentValue2,currentValue3,currentValue4);
+      return next(currentValue1, currentValue2, currentValue3, currentValue4);
     }
 
     @Override
     public Text getCurrentKey(){
-      return new Text(currentValue1.toString().substring(0,currentValue1.toString().length()-16));
+      return new Text(currentValue1.toString().substring(0, currentValue1.toString().length()-16));
     }
 
     @Override
     public Text getCurrentValue(){
-      return new Text(currentValue1.toString().substring(currentValue1.toString().length()-16)+"@"+currentValue2.toString());
+      return new Text(currentValue2.toString().substring(0,currentValue2.toString().length()-1) );
+    //+ currentValue4.toString().substring(0,currentValue4.toString().length()-1)
     }
 
     @Override
@@ -201,7 +202,7 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
 
       if(readName.getBytes()[0]!='@'){
         throw new RuntimeException("unexpected fastq record didn't start with '@' at "
-            +makePositionMessage()+".Line: "+readName+".\n");
+                +makePositionMessage()+".Line: "+readName+".\n");
       }
 
       value1.append(readName.getBytes(),0,readName.getLength());
@@ -249,8 +250,8 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
   // @param context - the information about the task
   // @return a new record reader
   public RecordReader<Text,Text> createRecordReader(
-      InputSplit genericSplit,
-      TaskAttemptContext context) throws IOException,InterruptedException{
+          InputSplit genericSplit,
+          TaskAttemptContext context) throws IOException,InterruptedException{
     context.setStatus(genericSplit.toString());
     return new FastqR2RecordReader(context.getConfiguration(),(FileSplit)genericSplit);
   }
