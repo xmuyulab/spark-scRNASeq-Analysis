@@ -14,10 +14,12 @@ object JNIStarInitProcess {
     val starLibPathBD =  sc.broadcast(starLibPath).value
     //  val referencePathBD = sc.broadcast(referencePath).value
     System.out.println("############Here is JNIStarInitProcess.############\n")
-    extractedFastq.map(record => {
-      print("############map record success.############\n")
-      StarInitAdapter.pairAlign(starLibPathBD)
-    })
+    val test1 = extractedFastq.map(
+      line => {
+        (StarInitAdapter.pairAlign(starLibPathBD))
+      }
+    )
+    test1.collect().foreach(print)
     return null;
   }
 }

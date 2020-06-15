@@ -24,7 +24,7 @@ object BinTools {
   }
 
   val starLibPath = {
-    val tmpPath = FileUtils.join(binDirPath, "libstarjni.so")
+    val tmpPath = FileUtils.join(binDirPath, "libSTAR.so")
     if(tmpPath.startsWith("file:")) tmpPath.substring(5) else tmpPath
   }
 

@@ -75,8 +75,14 @@ object scAnalysis {
 
     val fastqPartitions = extractFastqRdd.map(line => (new Text(line._2._2.toString().substring(0,16)), ( line._1, line._2._1, new Text(line._2._2.toString().substring(16))))).groupByKey()
 
-    val afterMapping = JNIStarInitProcess.runStar(sc, fastqPartitions)
+    // fastqPartitions.collect().foreach(
+    //   line => {
+    //     System.out.println("############Here is JNIStarInitProcess.############\n")
+    //   }//  StarInitAdapter.pairAlign(starLibPathBD)
+    // )
 
-    //  extractFastqRdd.repartition(1).saveAsTextFile("file:/home/liuyu/data/extractedFastqRdd_nq")
+    val afterMapping = JNIStarInitProcess.runStar(sc, fastqPartitions)
+    
+    //extractFastqRdd.repartition(1).saveAsTextFile("file:/home/liuyu/data/sam")
   }
 }
