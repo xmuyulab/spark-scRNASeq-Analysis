@@ -59,7 +59,7 @@ object scAnalysis {
 
     val conf = new SparkConf()
       .setAppName("SparkStar")
-      .set("spark.driver.maxResultSize", "24g")
+      .set("spark.driver.maxResultSize", "36g")
       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
       .registerKryoClasses(Array(classOf[FastqRecord]))
 
@@ -75,14 +75,7 @@ object scAnalysis {
 
     val fastqPartitions = extractFastqRdd.map(line => (new Text(line._2._2.toString().substring(0,16)), ( line._1, line._2._1, new Text(line._2._2.toString().substring(16))))).groupByKey()
 
-    // fastqPartitions.collect().foreach(
-    //   line => {
-    //     System.out.println("############Here is JNIStarInitProcess.############\n")
-    //   }//  StarInitAdapter.pairAlign(starLibPathBD)
-    // )
-
     val afterMapping = JNIStarInitProcess.runStar(sc, fastqPartitions)
-    
-    //extractFastqRdd.repartition(1).saveAsTextFile("file:/home/liuyu/data/sam")
+
   }
 }

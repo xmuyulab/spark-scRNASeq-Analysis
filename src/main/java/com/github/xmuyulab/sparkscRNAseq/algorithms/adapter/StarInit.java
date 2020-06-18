@@ -43,16 +43,16 @@ public class StarInit {
     GenomeAddress = Address[1];
     TranscriptomeAddress = Address[2];
     sjdbAddress = Address[3];
-//openStar(ParametersAddress, GenomeAddress, TranscriptomeAddress, sjdbAddress);
+    //openStar(ParametersAddress, GenomeAddress, TranscriptomeAddress, sjdbAddress);
   }
 
   @Override
   protected void finalize() {
   }
 
-  private static native long[] openParameters(int reference, char[][] readFilesCommand);// throws IOException;
+  public static native long[] openParameters(int reference, char[][] readFilesCommand);// throws IOException;
 
-  private static native void openStar(long pAddress, long gAddress, long tAddress, long sjdbAddress);
+  public static native void openStar(long pAddress, long gAddress, long tAddress, long sjdbAddress);
 
   //  private static native long openGenome(long ParametersAddress);
 
