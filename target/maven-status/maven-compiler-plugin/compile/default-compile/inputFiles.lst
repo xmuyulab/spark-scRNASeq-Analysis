@@ -1,0 +1,4 @@
+/home/liuyu/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat.java
+/home/liuyu/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java
+/home/liuyu/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInit.java
+/home/liuyu/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat.java

@@ -43,19 +43,24 @@ public class StarInit {
     GenomeAddress = Address[1];
     TranscriptomeAddress = Address[2];
     sjdbAddress = Address[3];
-    //openStar(ParametersAddress, GenomeAddress, TranscriptomeAddress, sjdbAddress);
+    //  openStar(ParametersAddress, GenomeAddress, TranscriptomeAddress, sjdbAddress);
+  }
+
+  public String startAlign() {
+    openStar(ParametersAddress, GenomeAddress, TranscriptomeAddress, sjdbAddress);
+    return "Hello world\n";
   }
 
   @Override
   protected void finalize() {
   }
 
-  public static native long[] openParameters(int reference, char[][] readFilesCommand);// throws IOException;
+  private static native long[] openParameters(int reference, char[][] readFilesCommand);// throws IOException;
 
-  public static native void openStar(long pAddress, long gAddress, long tAddress, long sjdbAddress);
+  private static native void openStar(long pAddress, long gAddress, long tAddress, long sjdbAddress);
 
   //  private static native long openGenome(long ParametersAddress);
 
 }
 
-//./STAR --runThreadN 4 --genomeDir /mnt/md0/liuyu/STARExample --readFilesIn /mnt/md0/liuyu/hgmm_100_R2_extracted.fastq.gz --readFilesCommand zcat --outFilterMultimapNmax 1 --outSAMtype BAM SortedByCoordinate
+//  ./STAR --runThreadN 4 --genomeDir /mnt/md0/liuyu/STARExample --readFilesIn /mnt/md0/liuyu/hgmm_100_R2_extracted.fastq.gz --readFilesCommand zcat --outFilterMultimapNmax 1 --outSAMtype BAM SortedByCoordinate

@@ -81,7 +81,7 @@ JNIEXPORT jlongArray JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_a
  * Signature: (JJJJ)V
  */
 JNIEXPORT void JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarInit_openStar
-  (JNIEnv *, jobject, jlong ParametersAddress, jlong GenomeAddress, jlong TranscriptomeAddress, jlong SjdbAddress) {
+  (JNIEnv *, jclass, jlong ParametersAddress, jlong GenomeAddress, jlong TranscriptomeAddress, jlong SjdbAddress) {
     Parameters* P;
     P = (Parameters*)ParametersAddress;
     Genome* mainGenome = (Genome*)GenomeAddress;

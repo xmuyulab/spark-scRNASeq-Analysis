@@ -6,7 +6,7 @@ package com.github.xmuyulab.sparkscRNAseq.data.basic
 import java.io.Serializable
 
 object FastqRecord extends Serializable{
-  def apply(descriptionLine:String,sequence:Array[Byte],quality:Array[Byte],compressFlag:Boolean):FastqRecord={
+  def apply(descriptionLine:String, sequence:Array[Byte], quality:Array[Byte], compressFlag:Boolean):FastqRecord={
     new FastqRecord(compressFlag,descriptionLine,sequence,quality)
   }
 }

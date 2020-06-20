@@ -8,18 +8,13 @@ import org.apache.hadoop.io.Text
 
 object JNIStarInitProcess {
   def runStar(sc: SparkContext,
-              extractedFastq: RDD[(Text, Iterable[(Text, Text, Text)])]): Void = {
+              extractedFastq: RDD[(String, Iterable[String])]): Void = {
 
     val starLibPath = BinTools.starLibPath
     val starLibPathBD =  sc.broadcast(starLibPath).value
     //  val referencePathBD = sc.broadcast(referencePath).value
-    System.out.println("############Here is JNIStarInitProcess.############\n")
-    val test1 = extractedFastq.map(
-      line => {
-        (StarInitAdapter.pairAlign(starLibPathBD))
-      }
-    )
-    test1.collect().foreach(print)
+    System.out.println("############### Here is JNIStarInitProcess. ###############\n")
+    extractedFastq.collect.foreach(line => {System.out.println(line._1)})
     return null;
   }
 }

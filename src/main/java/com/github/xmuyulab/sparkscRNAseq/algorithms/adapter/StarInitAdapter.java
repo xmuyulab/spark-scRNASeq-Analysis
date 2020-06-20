@@ -38,8 +38,7 @@ public class StarInitAdapter {
     if (starInit == null) {
       return "starInit is null.\n";
     }
-    starInit.openStar(starInit.ParametersAddress, starInit.GenomeAddress, starInit.TranscriptomeAddress, starInit.sjdbAddress);
-    return "Hello\n";
+    return starInit.startAlign();
   }
 
 }
