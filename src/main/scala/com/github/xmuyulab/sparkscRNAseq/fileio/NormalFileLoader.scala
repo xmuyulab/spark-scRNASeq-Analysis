@@ -46,7 +46,7 @@ object NormalFileLoader extends FileLoader{
 
   override def loadFastqPairToRdd(sc : SparkContext,
                                   filePath1 : String,
-                                  filePath2 : String) :  RDD[(Text, (Text, Text))] = {
+                                  filePath2 : String) :  RDD[FastqRecord] = {
     //    val whitelistTmp = loadFastqR1ToRdd(sc,filePath1)
     //                      .groupByKey()
     //                      .sortBy(_._2.size,false)
@@ -61,9 +61,15 @@ object NormalFileLoader extends FileLoader{
       .sortBy(_._2, false)
       .take(100))
       .join(fastqR1Rdd)
-      .map(line => (new Text(line._2._2.toString().substring(11)), new Text(line._1.toString() + line._2._2.toString().substring(0, 10))))
+      .map(line => (new Text(line._2._2.toString().substring(11)), new Text(line._1.toString() + "_" + line._2._2.toString().substring(0, 10))))
     val FR2Rdd = loadFastqR2ToRdd(sc, filePath2)
-      .join(whitelist)
+        .join(whitelist)
+        .map(
+          line => {
+            FastqRecord(line._1.toString() + " " + line._2._1.toString(), line._2._2.toString())
+          }
+        )
+
     FR2Rdd
   }
 

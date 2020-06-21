@@ -73,12 +73,12 @@ object scAnalysis {
 
     val extractFastqRdd = NormalFileLoader.loadFastqPairToRdd(sc, fastq1, fastq2)
 
-    val fastqPartitions = extractFastqRdd.map(line => 
-                                          (line._2._2.toString().substring(0,16), ( line._1.toString() + "\n" + line._2._1.toString() + "\n" + line._2._2.toString().substring(16))))
-                                          .groupByKey()
-                                          .repartition(4)
+//    val fastqPartitions = extractFastqRdd.map(line =>
+//                                          (line._2._2.toString().substring(0,16), ( line._1.toString() + "\n" + line._2._1.toString() + "\n" + line._2._2.toString().substring(16))))
+//                                          .groupByKey()
+//                                          .repartition(4)
 
-    val afterMapping = JNIStarInitProcess.runStar(sc, fastqPartitions)
+    val afterMapping = JNIStarInitProcess.runStar(sc, extractFastqRdd)
 
   }
 }

@@ -28,14 +28,59 @@
   <component name="ChangeListManager">
     <list default="true" id="bfedd519-a158-4864-adf5-1cf3df2a3514" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/engine/PartitionOptimizedProcess.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/engine/PartitionOptimizedProcess.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/engine/Pipeline.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/engine/Pipeline.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/engine/Process.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/engine/Process.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/data/basic/FastqRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/data/basic/FastqRecord.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/fileio/FileLoader.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/fileio/FileLoader.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/resource/ResourcePool.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/resource/ResourcePool.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/mapping/JNIStarInitProcess.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/mapping/JNIStarInitProcess.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/scAnalysis.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/scAnalysis.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes.2143213320.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/const/BinTools$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/const/BinTools.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/data/basic/FastqRecord$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/data/basic/FastqRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/engine/PartitionOptimizer$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/engine/PartitionOptimizer$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/engine/PartitionOptimizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/engine/Runnable$class.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/engine/Runnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/execptions/PipelineException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/execptions/ResourceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/FileLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader$$anonfun$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader$$anonfun$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader$$anonfun$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/NormalFileLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat$FastqR1RecordReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat$FastqR2RecordReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/logs/LOG$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/logs/LOG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/processes/mapping/JNIStarInitProcess$$anonfun$runStar$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/processes/mapping/JNIStarInitProcess$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/processes/mapping/JNIStarInitProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/processes/mapping/PartitionProcess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/resource/AbstractResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/resource/Resource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/scAnalysis$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/scAnalysis$$anonfun$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/scAnalysis$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/scAnalysis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/utils/FileUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/utils/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/utils/StringUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xmuyulab/sparkscRNAseq/utils/StringUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarInit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yulab-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yulab-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +113,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DIA_Umpire_src_v1_284" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SparkSeq" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -110,6 +155,7 @@
       <workItem from="1591686702629" duration="139000" />
       <workItem from="1592277625641" duration="11343000" />
       <workItem from="1592363768336" duration="8105000" />
+      <workItem from="1592640002674" duration="8635000" />
     </task>
     <servers />
   </component>
@@ -149,10 +195,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="434" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591683012163" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1592304337361">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1592642888394">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592304337361" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592642888394" />
     <state x="922" y="204" key="SettingsEditor" timestamp="1591686476993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -161,9 +207,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592289575888" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592364296878">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592643463331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592364296878" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592643463331" />
   </component>
 </project>
