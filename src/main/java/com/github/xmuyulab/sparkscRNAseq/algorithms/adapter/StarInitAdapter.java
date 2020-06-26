@@ -38,7 +38,6 @@ public class StarInitAdapter {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
     int chunkSize = 1000;
 
     return fastqRecords;

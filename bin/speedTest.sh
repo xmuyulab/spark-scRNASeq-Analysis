@@ -24,4 +24,4 @@ scp -r ~/bin liuyu@slave2:/home/liuyu
 scp -r ~/bin liuyu@slave3:/home/liuyu
 scp -r ~/bin liuyu@slave4:/home/liuyu
 cd ~/bin
-sh runScSpark.sh    #   >> log.txt
+sh runScSpark.sh >& log.txt
