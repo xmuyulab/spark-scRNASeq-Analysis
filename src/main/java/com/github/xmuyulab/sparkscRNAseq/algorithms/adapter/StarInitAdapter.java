@@ -38,9 +38,24 @@ public class StarInitAdapter {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    int chunkSize = 1000;
-
+    int chunkSize = 2000;
+    List<FastqRecord> reads = new ArrayList<>(chunkSize);
+    for(FastqRecord fRecord : fastqRecords) {
+      if (reads.size() == chunkSize) {
+        alignIntoResult();
+        reads.clear();
+      }
+      reads.add(fRecord);
+    }
     return fastqRecords;
+  }
+
+  private static void alignIntoResult(StarInit starinit, List<FastqRecord> reads) {
+
+    try {
+      StarAlign starAlign = new StarAlign(starinit);
+      
+    }
   }
 
 }
