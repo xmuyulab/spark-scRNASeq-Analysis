@@ -5,6 +5,7 @@ import com.github.xmuyulab.sparkscRNAseq.data.basic.FastqRecord;
 import java.io.IOException;
 
 import java.util.List;
+import java.util.ArrayList;
 
 //import Java.io.IOException;
 //import com.github.xmuyulab.sparkscRNAseq.execptions.PipelineException;
@@ -33,29 +34,24 @@ public class StarInitAdapter {
 
   public static List<FastqRecord> pairAlign(String starJNILibPath, List<FastqRecord> fastqRecords) throws IOException {
     StarInit starInit = null;
+    StarAlign starAlign = null;
     try {
       starInit = getStarInitInstance(starJNILibPath);
+      starAlign = new StarAlign(starInit);
     } catch (IOException e) {
       e.printStackTrace();
     }
     int chunkSize = 2000;
-    List<FastqRecord> reads = new ArrayList<>(chunkSize);
+    List<String> reads = new ArrayList<>(chunkSize);
     for(FastqRecord fRecord : fastqRecords) {
       if (reads.size() == chunkSize) {
-        alignIntoResult();
+        starAlign.tranFastq(reads);
         reads.clear();
       }
-      reads.add(fRecord);
+      reads.add(fRecord.toString());
     }
+    starAlign.startAlign();
     return fastqRecords;
-  }
-
-  private static void alignIntoResult(StarInit starinit, List<FastqRecord> reads) {
-
-    try {
-      StarAlign starAlign = new StarAlign(starinit);
-      
-    }
   }
 
 }

@@ -21,7 +21,7 @@ object JNIStarInitProcess {
         StarInitAdapter.pairAlign(starLibPathBD, it.toSeq)
         it
       }
-    ).repartition(1).saveAsTextFile("file:/home/liuyu/result1")
+    ).repartition(1).saveAsTextFile("file:/root/result1")
     return null;
   }
 }

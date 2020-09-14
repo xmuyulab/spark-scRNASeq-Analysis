@@ -55,18 +55,27 @@ object NormalFileLoader extends FileLoader{
     //    for (i <- 1 to 99) {
     //      whitelist.union(sc.parallelize(whitelistTmp(i)._2.toList).map(line => (new Text(line.toString().substring(10)),(new Text(line.toString().substring(0,10)), whitelistTmp(i)._1))))
     //    }
+    
+    //  RDD[key, value]
+    //  key:  line2.substring(0, 16)
+    //  value:  line2.substring(16) + line1.substring(0, length()-16)
     val fastqR1Rdd = loadFastqR1ToRdd(sc, filePath1)
+    //  key:  line1
+    //  value:  line2(16)+_+line2(0,16)
     val whitelist = sc.parallelize(fastqR1Rdd.map(line => (line._1, 1))
       .reduceByKey((a, b) => a + b)
       .sortBy(_._2, false)
       .take(100))
       .join(fastqR1Rdd)
       .map(line => (new Text(line._2._2.toString().substring(11)), new Text(line._1.toString() + "_" + line._2._2.toString().substring(0, 10))))
+
+    //  key:  fastq2.line1+fastq1.line2()
+    //  value:  fastq2.line2+line3+line4
     val FR2Rdd = loadFastqR2ToRdd(sc, filePath2)
         .join(whitelist)
         .map(
           line => {
-            FastqRecord(line._1.toString() + " " + line._2._1.toString(), line._2._2.toString())
+            FastqRecord(line._1.toString() + "_" + line._2._2.toString(), line._2._1.toString())
           }
         )
 
