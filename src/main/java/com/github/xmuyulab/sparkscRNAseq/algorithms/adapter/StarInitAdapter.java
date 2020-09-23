@@ -1,7 +1,7 @@
 package com.github.xmuyulab.sparkscRNAseq.algorithms.adapter;
 
 import com.github.xmuyulab.sparkscRNAseq.data.basic.FastqRecord;
-
+import com.github.xmuyulab.sparkscRNAseq.algorithms.tools.StringToSamTool;
 import java.io.IOException;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class StarInitAdapter {
     return starInitInstance;
   }
 
-  public static List<FastqRecord> pairAlign(String starJNILibPath, List<FastqRecord> fastqRecords) throws IOException {
+  public static List<String> pairAlign(String starJNILibPath, List<FastqRecord> fastqRecords) throws IOException {
     StarInit starInit = null;
     StarAlign starAlign = null;
     try {
@@ -47,11 +47,14 @@ public class StarInitAdapter {
       if (reads.size() == chunkSize) {
         starAlign.tranFastq(reads);
         reads.clear();
+        //break;
       }
       reads.add(fRecord.toString());
     }
-    starAlign.startAlign();
-    return fastqRecords;
+    StringToSamTool stringToSamTool = new StringToSamTool();
+    List<String> res;
+    res = stringToSamTool.StringToSam(starAlign.startAlign()); 
+    return res;
   }
 
 }

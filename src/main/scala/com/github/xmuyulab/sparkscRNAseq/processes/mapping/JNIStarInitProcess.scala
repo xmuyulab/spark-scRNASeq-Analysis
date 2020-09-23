@@ -16,12 +16,12 @@ object JNIStarInitProcess {
     val starLibPathBD =  sc.broadcast(starLibPath).value
     //  val referencePathBD = sc.broadcast(referencePath).value
     System.out.println("############### Here is JNIStarInitProcess. ###############\n")
-    extractedFastq.repartition(200).mapPartitions(
+    extractedFastq.repartition(2).mapPartitions(
       it => {
-        StarInitAdapter.pairAlign(starLibPathBD, it.toSeq)
-        it
+        StarInitAdapter.pairAlign(starLibPathBD, it.toSeq).iterator
       }
-    ).repartition(1).saveAsTextFile("file:/root/result1")
+    ).repartition(1).saveAsTextFile("file:///root/result")
+    System.out.println("############### Here is JNIStarInitProcess. ###############\n")
     return null;
   }
 }

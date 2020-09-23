@@ -16,9 +16,9 @@ public class StarAlign {
         tranFastq(starInit.cAddress, reads.toArray(new String[reads.size()]));
     }
 
-    public void startAlign() {
+    public String startAlign() {
         STARCommandGenerate sCommand = new STARCommandGenerate();
-        runStar(starInit.cAddress, sCommand.getCommandLine());
+        return runStar(starInit.cAddress, sCommand.getCommandLine());
     }
 
     private native void tranFastq(long cAddress, final String fqR[]);

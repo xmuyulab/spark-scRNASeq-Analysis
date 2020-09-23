@@ -15,6 +15,6 @@ class FastqRecord(val descriptionLine : String,
                   val sequence : String
                  ) extends Serializable {
   override def toString: String = {
-    "%s\n%s\n".format(descriptionLine, sequence)
+    "%s\n%s".format(descriptionLine, sequence)
   }
 }

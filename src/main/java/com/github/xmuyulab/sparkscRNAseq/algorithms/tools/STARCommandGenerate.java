@@ -15,9 +15,9 @@ public class STARCommandGenerate {
     	commandLine[1] = "--runThreadN\0".toCharArray();
     	commandLine[2] = "4\0".toCharArray();
     	commandLine[3] = "--genomeDir\0".toCharArray();
-    	commandLine[4] = "/home/liuyu/STAR_INDEX\0".toCharArray();
+    	commandLine[4] = "/root/data/STAR_INDEX\0".toCharArray();
     	commandLine[5] = "--readFilesIn\0".toCharArray();
-    	commandLine[6] = "/mnt/spark/hgmm_100_R2_extracted.fastq.gz\0".toCharArray();
+    	commandLine[6] = "/root/data/hgmm_100_R2_extracted.fastq.gz\0".toCharArray();
     	commandLine[7] = "--outFilterMultimapNmax\0".toCharArray();
     	commandLine[8] = "1\0".toCharArray();
     	commandLine[9] = "--outSAMtype\0".toCharArray();

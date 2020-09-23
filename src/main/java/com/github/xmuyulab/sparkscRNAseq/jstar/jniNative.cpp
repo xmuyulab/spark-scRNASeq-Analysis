@@ -100,8 +100,8 @@ JNIEXPORT jstring JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adap
       P.inOut->readIn[0] << ((GetFastq*)cAddress)->tmpReadIn.rdbuf();
       //P.inOut->readIn[0].open("/home/liuyu/fastq", std::ios::app);
       //std::cout << ((GetFastq*)cAddress)->tmpReadIn.rdbuf();
-      *(P.inOut->logStdOut) << timeMonthDayTime(g_statsAll.timeStart) << "...started STAR run\n" << flush;
-
+     P.inOut->logMain << timeMonthDayTime(g_statsAll.timeStart) << "...started STAR run\n" << flush;
+     P.inOut->logMain << timeMonthDayTime(g_statsAll.timeStart) << "...Hello World!\n" << flush;
     //generate genome
     if (P.runMode=="alignReads") {
         //continue
@@ -281,6 +281,7 @@ JNIEXPORT jstring JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adap
         delete genomeMain.sharedMemory;
         genomeMain.sharedMemory = NULL;
     };
+    P.inOut->logMain << "..................Here we run all content of STAR..................\n";
 
     delete P.inOut; //to close files
     return env->NewStringUTF(cs);

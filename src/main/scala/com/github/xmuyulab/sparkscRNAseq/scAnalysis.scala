@@ -60,7 +60,7 @@ object scAnalysis {
 
     val conf = new SparkConf()
       .setAppName("SparkStar")
-      .set("spark.driver.maxResultSize", "36g")
+      .set("spark.driver.maxResultSize", "60g")
       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
       .registerKryoClasses(Array(classOf[FastqRecord], classOf[BasicSamRecord]))
 
