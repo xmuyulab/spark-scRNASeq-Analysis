@@ -1,7 +1,0 @@
-/root/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarAlign.java
-/root/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/tools/StringToSamTool.java
-/root/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat.java
-/root/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat.java
-/root/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java
-/root/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInit.java
-/root/spark-scRNASeq-Analysis/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/tools/STARCommandGenerate.java
