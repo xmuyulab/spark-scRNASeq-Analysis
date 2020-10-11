@@ -1,0 +1,1122 @@
+Genome_transformGenome.o: Genome_transformGenome.cpp Genome.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h SequenceFuns.h \
+ streamFuns.h ErrorWarning.h serviceFuns.cpp GTF.h SjdbClass.h
+Parameters_readSAMheader.o: Parameters_readSAMheader.cpp Parameters.h \
+ IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ErrorWarning.h
+ReadAlign_mapOneRead.o: ReadAlign_mapOneRead.cpp ReadAlign.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h serviceFuns.cpp
+readLoad.o: readLoad.cpp readLoad.h IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h SequenceFuns.h ErrorWarning.h
+ReadAlign_mapOneReadSpliceGraph.o: ReadAlign_mapOneReadSpliceGraph.cpp \
+ ReadAlign.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h \
+ serviceFuns.cpp
+SoloReadFeature.o: SoloReadFeature.cpp SoloReadFeature.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloCommon.h SoloReadFeatureStats.h \
+ ReadAnnotations.h streamFuns.h
+ChimericDetection_chimericDetectionMult.o: \
+ ChimericDetection_chimericDetectionMult.cpp ChimericDetection.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ ChimericAlign.h ChimericSegment.h
+sjdbPrepare.o: sjdbPrepare.cpp sjdbPrepare.h SjdbClass.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Genome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h ErrorWarning.h \
+ serviceFuns.cpp
+ChimericSegment.o: ChimericSegment.cpp ChimericSegment.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h
+Transcriptome_classifyAlign.o: Transcriptome_classifyAlign.cpp \
+ Transcriptome.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h ReadAlign.h Stats.h \
+ OutSJ.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ serviceFuns.cpp
+genomeParametersWrite.o: genomeParametersWrite.cpp \
+ genomeParametersWrite.h Parameters.h IncludeDefine.h VERSION \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Genome.h PackedArray.h SharedMemory.h Variation.h \
+ SuperTranscriptome.h streamFuns.h
+funCompareUintAndSuffixes.o: funCompareUintAndSuffixes.cpp \
+ funCompareUintAndSuffixes.h
+SoloFeature_sumThreads.o: SoloFeature_sumThreads.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h SequenceFuns.h GlobalVariables.h ThreadControl.h
+bamSortByCoordinate.o: bamSortByCoordinate.cpp bamSortByCoordinate.h \
+ Parameters.h IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ReadAlignChunk.h \
+ ReadAlign.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h Solo.h \
+ SoloFeature.h BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h \
+ ErrorWarning.h BAMbinSortByCoordinate.h BAMbinSortUnmapped.h bam_cat.h
+SoloFeature.o: SoloFeature.cpp SoloFeature.h IncludeDefine.h VERSION \
+ ReadAlignChunk.h Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ReadAlign.h \
+ Transcript.h Variation.h Genome.h PackedArray.h SharedMemory.h \
+ SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h streamFuns.h \
+ ErrorWarning.h
+ReadAlign_stitchPieces.o: ReadAlign_stitchPieces.cpp IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h ReadAlign.h Stats.h \
+ OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h stitchWindowAligns.h \
+ extendAlign.h stitchAlignToTranscript.h sjAlignSplit.h GlobalVariables.h \
+ ThreadControl.h ReadAlignChunk.h
+BAMbinSortByCoordinate.o: BAMbinSortByCoordinate.cpp \
+ BAMbinSortByCoordinate.h IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Genome.h PackedArray.h SharedMemory.h Variation.h \
+ SuperTranscriptome.h Solo.h ReadAlignChunk.h ReadAlign.h Transcript.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h SoloFeature.h ErrorWarning.h \
+ serviceFuns.cpp BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h \
+ SequenceFuns.h
+Transcriptome_quantAlign.o: Transcriptome_quantAlign.cpp Transcriptome.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ ReadAlign.h Stats.h OutSJ.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h serviceFuns.cpp
+ReadAlign_alignBAM.o: ReadAlign_alignBAM.cpp ReadAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ SequenceFuns.h ErrorWarning.h BAMfunctions.h htslib/htslib/sam.h \
+ htslib/htslib/hts.h
+GTF_transcriptGeneSJ.o: GTF_transcriptGeneSJ.cpp GTF.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h SjdbClass.h Genome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h serviceFuns.cpp \
+ streamFuns.h
+SoloFeature_processRecords.o: SoloFeature_processRecords.cpp \
+ SoloFeature.h IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h SequenceFuns.h
+SpliceGraph_swTraceBack.o: SpliceGraph_swTraceBack.cpp
+ReadAlignChunk.o: ReadAlignChunk.cpp ReadAlignChunk.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h ReadAlign.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h ErrorWarning.h
+Transcriptome.o: Transcriptome.cpp Transcriptome.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h streamFuns.h \
+ GlobalVariables.h ThreadControl.h ReadAlignChunk.h ReadAlign.h Stats.h \
+ OutSJ.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ ErrorWarning.h serviceFuns.cpp
+Chain.o: Chain.cpp Chain.h IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ErrorWarning.h streamFuns.h serviceFuns.cpp
+Stats.o: Stats.cpp Stats.h IncludeDefine.h VERSION Transcript.h \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h
+Transcript_generateCigarP.o: Transcript_generateCigarP.cpp Transcript.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h SequenceFuns.h
+SoloReadFeature_record.o: SoloReadFeature_record.cpp SoloReadFeature.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloCommon.h \
+ SoloReadFeatureStats.h ReadAnnotations.h serviceFuns.cpp SequenceFuns.h
+Transcript_transformGenome.o: Transcript_transformGenome.cpp Transcript.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h
+Parameters_openReadsFiles.o: Parameters_openReadsFiles.cpp Parameters.h \
+ IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ErrorWarning.h \
+ GetFastq.h
+Quantifications.o: Quantifications.cpp Quantifications.h IncludeDefine.h \
+ VERSION
+stitchAlignToTranscript.o: stitchAlignToTranscript.cpp IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h extendAlign.h \
+ binarySearch2.h
+ReadAlign_chimericDetection.o: ReadAlign_chimericDetection.cpp \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ ReadAlign.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h BAMfunctions.h \
+ htslib/htslib/sam.h htslib/htslib/hts.h ErrorWarning.h blocksOverlap.h
+jniNative.o: jniNative.cpp jni.h jni_md.h \
+ com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarAlign.h \
+ com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarInit.h \
+ GetFastq.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h SequenceFuns.h Genome.h PackedArray.h SharedMemory.h \
+ Variation.h SuperTranscriptome.h Chain.h ErrorWarning.h ReadAlignChunk.h \
+ ReadAlign.h Transcript.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h genomeGenerate.h \
+ outputSJ.h ThreadControl.h GlobalVariables.h sysRemoveDir.h \
+ BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h \
+ bamSortByCoordinate.h Solo.h SoloFeature.h signalFromBAM.h \
+ mapThreadsSpawn.h sjdbInsertJunctions.h samHeaders.h twoPassRunPass1.h
+sjAlignSplit.o: sjAlignSplit.cpp sjAlignSplit.h IncludeDefine.h VERSION \
+ Genome.h Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h
+SoloFeature_statsOutput.o: SoloFeature_statsOutput.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h GlobalVariables.h ThreadControl.h
+Genome_genomeLoad.o: Genome_genomeLoad.cpp Genome.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h PackedArray.h SharedMemory.h \
+ Variation.h SuperTranscriptome.h SuffixArrayFuns.h ErrorWarning.h \
+ streamFuns.h genomeScanFastaFiles.h
+stitchWindowAligns.o: stitchWindowAligns.cpp stitchWindowAligns.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ extendAlign.h stitchAlignToTranscript.h ReadAlign.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ blocksOverlap.h ErrorWarning.h binarySearch2.h
+BAMfunctions.o: BAMfunctions.cpp BAMfunctions.h IncludeDefine.h VERSION \
+ htslib/htslib/bgzf.h htslib/htslib/sam.h htslib/htslib/hts.h \
+ ErrorWarning.h Parameters.h InOutStreams.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h htslib/htslib/kstring.h
+ReadAlign_maxMappableLength2strands.o: \
+ ReadAlign_maxMappableLength2strands.cpp ReadAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ SuffixArrayFuns.h ErrorWarning.h
+SoloFeature_countSmartSeq.o: SoloFeature_countSmartSeq.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h SequenceFuns.h serviceFuns.cpp soloInputFeatureUMI.h
+serviceFuns.o: serviceFuns.cpp IncludeDefine.h VERSION
+Genome_insertSequences.o: Genome_insertSequences.cpp Genome.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h genomeScanFastaFiles.h \
+ insertSeqSA.h
+SoloFeature_addBAMtags.o: SoloFeature_addBAMtags.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h ErrorWarning.h \
+ SequenceFuns.h
+ReadAlign_chimericDetectionPEmerged.o: \
+ ReadAlign_chimericDetectionPEmerged.cpp ReadAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h ErrorWarning.h
+bamRemoveDuplicates.o: bamRemoveDuplicates.cpp bamRemoveDuplicates.h \
+ Parameters.h IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h htslib/htslib/sam.h \
+ htslib/htslib/hts.h ErrorWarning.h
+insertSeqSA.o: insertSeqSA.cpp insertSeqSA.h IncludeDefine.h VERSION \
+ PackedArray.h Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Genome.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h ErrorWarning.h \
+ SuffixArrayFuns.h SequenceFuns.h serviceFuns.cpp streamFuns.h \
+ binarySearch2.h funCompareUintAndSuffixes.h \
+ funCompareUintAndSuffixesMemcmp.h genomeSAindex.h sortSuffixesBucket.h
+streamFuns.o: streamFuns.cpp streamFuns.h Parameters.h IncludeDefine.h \
+ VERSION InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h ErrorWarning.h
+ReadAlignChunk_processChunks.o: ReadAlignChunk_processChunks.cpp \
+ ReadAlignChunk.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ GlobalVariables.h ThreadControl.h ErrorWarning.h SequenceFuns.h
+BAMoutput.o: BAMoutput.cpp BAMoutput.h IncludeDefine.h VERSION \
+ htslib/htslib/bgzf.h Parameters.h InOutStreams.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h GlobalVariables.h ThreadControl.h \
+ ReadAlignChunk.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h serviceFuns.cpp \
+ streamFuns.h
+SpliceGraph_findSuperTr.o: SpliceGraph_findSuperTr.cpp SpliceGraph.h \
+ GTF.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h SjdbClass.h Genome.h PackedArray.h SharedMemory.h \
+ Variation.h SuperTranscriptome.h Transcript.h sjAlignSplit.h ReadAlign.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h
+GTF.o: GTF.cpp GTF.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h SjdbClass.h Genome.h PackedArray.h SharedMemory.h \
+ Variation.h SuperTranscriptome.h ErrorWarning.h streamFuns.h
+SoloReadBarcode.o: SoloReadBarcode.cpp SoloReadBarcode.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h SoloReadBarcodeStats.h \
+ streamFuns.h
+ReadAlign_CIGAR.o: ReadAlign_CIGAR.cpp ReadAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+ParametersSolo.o: ParametersSolo.cpp ParametersSolo.h IncludeDefine.h \
+ VERSION SoloBarcode.h SoloFeatureTypes.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersGenome.h ErrorWarning.h streamFuns.h \
+ SequenceFuns.h serviceFuns.cpp
+Parameters_readFilesInit.o: Parameters_readFilesInit.cpp Parameters.h \
+ IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ErrorWarning.h \
+ streamFuns.h serviceFuns.cpp
+ReadAlign_outputVariation.o: ReadAlign_outputVariation.cpp ReadAlign.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h
+funCompareUintAndSuffixesMemcmp.o: funCompareUintAndSuffixesMemcmp.cpp \
+ funCompareUintAndSuffixesMemcmp.h
+samHeaders.o: samHeaders.cpp samHeaders.h Parameters.h IncludeDefine.h \
+ VERSION InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Genome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h Transcriptome.h \
+ Transcript.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h \
+ ErrorWarning.h
+ReadAlign_chimericDetectionOldOutput.o: \
+ ReadAlign_chimericDetectionOldOutput.cpp ReadAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h ErrorWarning.h
+mapThreadsSpawn.o: mapThreadsSpawn.cpp mapThreadsSpawn.h Parameters.h \
+ IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ReadAlignChunk.h \
+ ReadAlign.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h ThreadControl.h \
+ GlobalVariables.h ErrorWarning.h
+SuperTranscriptome.o: SuperTranscriptome.cpp SuperTranscriptome.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h streamFuns.h
+InOutStreams.o: InOutStreams.cpp InOutStreams.h IncludeDefine.h VERSION \
+ htslib/htslib/bgzf.h GlobalVariables.h ThreadControl.h ReadAlignChunk.h \
+ Parameters.h ParameterInfo.h TimeFunctions.h ParametersChimeric.h \
+ ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h \
+ ReadAlign.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+stringSubstituteAll.o: stringSubstituteAll.cpp stringSubstituteAll.h
+SharedMemory.o: SharedMemory.cpp SharedMemory.h
+ReadAlign_waspMap.o: ReadAlign_waspMap.cpp ReadAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+ReadAlign_storeAligns.o: ReadAlign_storeAligns.cpp IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h ReadAlign.h Stats.h \
+ OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h ErrorWarning.h
+Transcript.o: Transcript.cpp Transcript.h IncludeDefine.h VERSION \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h
+SuffixArrayFuns.o: SuffixArrayFuns.cpp SuffixArrayFuns.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h PackedArray.h Genome.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h
+SequenceFuns.o: SequenceFuns.cpp SequenceFuns.h IncludeDefine.h VERSION
+extendAlign.o: extendAlign.cpp IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h extendAlign.h
+ChimericAlign_chimericStitching.o: ChimericAlign_chimericStitching.cpp \
+ ChimericAlign.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h ChimericSegment.h
+ReadAlign_transformGenome.o: ReadAlign_transformGenome.cpp ReadAlign.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h ErrorWarning.h
+sjdbLoadFromFiles.o: sjdbLoadFromFiles.cpp sjdbLoadFromFiles.h \
+ SjdbClass.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h sjdbLoadFromStream.h ErrorWarning.h
+genomeScanFastaFiles.o: genomeScanFastaFiles.cpp genomeScanFastaFiles.h \
+ Parameters.h IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Genome.h \
+ PackedArray.h SharedMemory.h Variation.h SuperTranscriptome.h \
+ ErrorWarning.h SequenceFuns.h
+SoloBarcode_extractBarcode.o: SoloBarcode_extractBarcode.cpp \
+ SoloBarcode.h IncludeDefine.h VERSION
+sjdbBuildIndex.o: sjdbBuildIndex.cpp sjdbBuildIndex.h Parameters.h \
+ IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h PackedArray.h \
+ Genome.h SharedMemory.h Variation.h SuperTranscriptome.h ErrorWarning.h \
+ SuffixArrayFuns.h SequenceFuns.h serviceFuns.cpp streamFuns.h \
+ binarySearch2.h funCompareUintAndSuffixes.h
+SpliceGraph_swScoreSpliced.o: SpliceGraph_swScoreSpliced.cpp \
+ SpliceGraph.h GTF.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h SjdbClass.h Genome.h PackedArray.h SharedMemory.h \
+ Variation.h SuperTranscriptome.h Transcript.h
+Variation.o: Variation.cpp Variation.h IncludeDefine.h VERSION \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h streamFuns.h SequenceFuns.h \
+ serviceFuns.cpp ErrorWarning.h
+ReadAlign_outputTranscriptSAM.o: ReadAlign_outputTranscriptSAM.cpp \
+ ReadAlign.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h \
+ ErrorWarning.h
+ChimericAlign_chimericJunctionOutput.o: \
+ ChimericAlign_chimericJunctionOutput.cpp ChimericAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h ChimericSegment.h \
+ ReadAlign.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+binarySearch2.o: binarySearch2.cpp binarySearch2.h IncludeDefine.h \
+ VERSION
+Transcript_variationAdjust.o: Transcript_variationAdjust.cpp Transcript.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h serviceFuns.cpp
+signalFromBAM.o: signalFromBAM.cpp signalFromBAM.h htslib/htslib/sam.h \
+ htslib/htslib/hts.h Stats.h IncludeDefine.h VERSION Transcript.h \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h
+SoloReadFeature_inputRecords.o: SoloReadFeature_inputRecords.cpp \
+ SoloReadFeature.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloCommon.h SoloReadFeatureStats.h \
+ ReadAnnotations.h SoloFeature.h ReadAlignChunk.h ReadAlign.h Stats.h \
+ OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SpliceGraph.h GTF.h SjdbClass.h soloInputFeatureUMI.h \
+ serviceFuns.cpp
+ReadAlign_outputSpliceGraphSAM.o: ReadAlign_outputSpliceGraphSAM.cpp \
+ ReadAlign.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h \
+ ErrorWarning.h
+STAR.o: STAR.cpp IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h SequenceFuns.h Genome.h PackedArray.h SharedMemory.h \
+ Variation.h SuperTranscriptome.h Chain.h ErrorWarning.h ReadAlignChunk.h \
+ ReadAlign.h Transcript.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h genomeGenerate.h \
+ outputSJ.h ThreadControl.h GlobalVariables.h sysRemoveDir.h \
+ BAMfunctions.h htslib/htslib/sam.h htslib/htslib/hts.h \
+ bamSortByCoordinate.h Solo.h SoloFeature.h signalFromBAM.h \
+ mapThreadsSpawn.h sjdbInsertJunctions.h samHeaders.h twoPassRunPass1.h \
+ parametersDefault.xxd
+SoloFeature_cellFiltering.o: SoloFeature_cellFiltering.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h serviceFuns.cpp SequenceFuns.h ErrorWarning.h
+Solo.o: Solo.cpp Solo.h IncludeDefine.h VERSION ReadAlignChunk.h \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h ReadAlign.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h SoloFeature.h streamFuns.h
+ReadAlign_outputAlignments.o: ReadAlign_outputAlignments.cpp ReadAlign.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h GlobalVariables.h ThreadControl.h \
+ ReadAlignChunk.h ErrorWarning.h
+SpliceGraph.o: SpliceGraph.cpp SpliceGraph.h GTF.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h SjdbClass.h Genome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h Transcript.h
+SoloFeature_outputResults.o: SoloFeature_outputResults.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h serviceFuns.cpp SequenceFuns.h ErrorWarning.h
+SoloRead.o: SoloRead.cpp SoloRead.h SoloReadBarcode.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h SoloCommon.h SoloReadFeatureStats.h \
+ ReadAnnotations.h
+OutSJ.o: OutSJ.cpp OutSJ.h Parameters.h IncludeDefine.h VERSION \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Genome.h PackedArray.h SharedMemory.h Variation.h \
+ SuperTranscriptome.h ErrorWarning.h
+SoloRead_record.o: SoloRead_record.cpp SoloRead.h SoloReadBarcode.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h Transcript.h Variation.h \
+ Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h SoloCommon.h \
+ SoloReadFeatureStats.h ReadAnnotations.h
+ReadAlign_outputTranscriptCIGARp.o: ReadAlign_outputTranscriptCIGARp.cpp \
+ ReadAlign.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h
+ErrorWarning.o: ErrorWarning.cpp ErrorWarning.h IncludeDefine.h VERSION \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h GlobalVariables.h ThreadControl.h \
+ ReadAlignChunk.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+blocksOverlap.o: blocksOverlap.cpp blocksOverlap.h IncludeDefine.h \
+ VERSION Transcript.h Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h
+SoloBarcode.o: SoloBarcode.cpp SoloBarcode.h IncludeDefine.h VERSION \
+ serviceFuns.cpp
+ChimericAlign.o: ChimericAlign.cpp ChimericAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h ChimericSegment.h
+TimeFunctions.o: TimeFunctions.cpp
+stitchGapIndel.o: stitchGapIndel.cpp IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h
+genomeSAindex.o: genomeSAindex.cpp genomeSAindex.h PackedArray.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Genome.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h SuffixArrayFuns.h \
+ ErrorWarning.h
+GetFastq.o: GetFastq.cpp GetFastq.h
+ReadAlign_calcCIGAR.o: ReadAlign_calcCIGAR.cpp ReadAlign.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h
+Genome_genomeGenerate.o: Genome_genomeGenerate.cpp Genome.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h SuffixArrayFuns.h \
+ ErrorWarning.h GTF.h SjdbClass.h sjdbLoadFromFiles.h sjdbPrepare.h \
+ genomeParametersWrite.h sjdbInsertJunctions.h genomeScanFastaFiles.h \
+ genomeSAindex.h serviceFuns.cpp streamFuns.h SequenceFuns.h
+Parameters_closeReadsFiles.o: Parameters_closeReadsFiles.cpp Parameters.h \
+ IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ErrorWarning.h
+ReadAlign_chimericDetectionOld.o: ReadAlign_chimericDetectionOld.cpp \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ ReadAlign.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h blocksOverlap.h
+SoloFeature_collapseUMI.o: SoloFeature_collapseUMI.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h serviceFuns.cpp
+Genome_genomeOutLoad.o: Genome_genomeOutLoad.cpp Genome.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h PackedArray.h SharedMemory.h \
+ Variation.h SuperTranscriptome.h SuffixArrayFuns.h ErrorWarning.h \
+ streamFuns.h
+Parameters.o: Parameters.cpp IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ErrorWarning.h SequenceFuns.h OutSJ.h Genome.h \
+ PackedArray.h SharedMemory.h Variation.h SuperTranscriptome.h \
+ sysRemoveDir.h stringSubstituteAll.h GlobalVariables.h ThreadControl.h \
+ ReadAlignChunk.h ReadAlign.h Transcript.h Stats.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h signalFromBAM.h \
+ htslib/htslib/sam.h htslib/htslib/hts.h bamRemoveDuplicates.h \
+ streamFuns.h parametersDefault.xxd
+Transcript_convertGenomeCigar.o: Transcript_convertGenomeCigar.cpp \
+ Transcript.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Variation.h Genome.h PackedArray.h SharedMemory.h \
+ SuperTranscriptome.h
+Transcriptome_geneFullAlignOverlap.o: \
+ Transcriptome_geneFullAlignOverlap.cpp Transcriptome.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h serviceFuns.cpp
+outputSJ.o: outputSJ.cpp ReadAlignChunk.h IncludeDefine.h VERSION \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h ReadAlign.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h ErrorWarning.h
+SoloFeature_countCBgeneUMI.o: SoloFeature_countCBgeneUMI.cpp \
+ SoloFeature.h IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h SequenceFuns.h
+ReadAlignChunk_mapChunk.o: ReadAlignChunk_mapChunk.cpp ReadAlignChunk.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ReadAlign.h \
+ Transcript.h Variation.h Genome.h PackedArray.h SharedMemory.h \
+ SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h GlobalVariables.h \
+ ThreadControl.h ErrorWarning.h
+ThreadControl.o: ThreadControl.cpp ThreadControl.h ReadAlignChunk.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ReadAlign.h \
+ Transcript.h Variation.h Genome.h PackedArray.h SharedMemory.h \
+ SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+sjdbInsertJunctions.o: sjdbInsertJunctions.cpp sjdbInsertJunctions.h \
+ Parameters.h IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Genome.h \
+ PackedArray.h SharedMemory.h Variation.h SuperTranscriptome.h \
+ SjdbClass.h sjdbLoadFromStream.h sjdbLoadFromFiles.h sjdbPrepare.h \
+ ErrorWarning.h GTF.h sjdbBuildIndex.h streamFuns.h \
+ genomeParametersWrite.h
+Genome.o: Genome.cpp Genome.h IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h PackedArray.h SharedMemory.h Variation.h \
+ SuperTranscriptome.h SuffixArrayFuns.h ErrorWarning.h streamFuns.h \
+ genomeScanFastaFiles.h
+ReadAlign_createExtendWindowsWithAlign.o: \
+ ReadAlign_createExtendWindowsWithAlign.cpp IncludeDefine.h VERSION \
+ Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h ReadAlign.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h
+ReadAlign_multMapSelect.o: ReadAlign_multMapSelect.cpp IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h ReadAlign.h Stats.h \
+ OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h ErrorWarning.h
+SoloFeature_countVelocyto.o: SoloFeature_countVelocyto.cpp SoloFeature.h \
+ IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h SequenceFuns.h
+PackedArray.o: PackedArray.cpp PackedArray.h IncludeDefine.h VERSION
+ReadAlign_outputTranscriptSJ.o: ReadAlign_outputTranscriptSJ.cpp \
+ ReadAlign.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+SoloFeature_redistributeReadsByCB.o: \
+ SoloFeature_redistributeReadsByCB.cpp SoloFeature.h IncludeDefine.h \
+ VERSION ReadAlignChunk.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h
+ReadAlign.o: ReadAlign.cpp IncludeDefine.h VERSION Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h ReadAlign.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+ReadAlign_assignAlignToWindow.o: ReadAlign_assignAlignToWindow.cpp \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ReadAlign.h \
+ Transcript.h Variation.h Genome.h PackedArray.h SharedMemory.h \
+ SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h ErrorWarning.h
+BAMbinSortUnmapped.o: BAMbinSortUnmapped.cpp BAMbinSortUnmapped.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Genome.h \
+ PackedArray.h SharedMemory.h Variation.h SuperTranscriptome.h Solo.h \
+ ReadAlignChunk.h ReadAlign.h Transcript.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ SoloFeature.h ErrorWarning.h BAMfunctions.h htslib/htslib/sam.h \
+ htslib/htslib/hts.h
+ChimericDetection.o: ChimericDetection.cpp ChimericDetection.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ ChimericAlign.h ChimericSegment.h
+GlobalVariables.o: GlobalVariables.cpp GlobalVariables.h ThreadControl.h \
+ ReadAlignChunk.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+ParametersChimeric_initialize.o: ParametersChimeric_initialize.cpp \
+ ParametersChimeric.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h ErrorWarning.h \
+ GlobalVariables.h ThreadControl.h ReadAlignChunk.h ReadAlign.h \
+ Transcript.h Variation.h Genome.h PackedArray.h SharedMemory.h \
+ SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h
+twoPassRunPass1.o: twoPassRunPass1.cpp twoPassRunPass1.h Parameters.h \
+ IncludeDefine.h VERSION InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Genome.h \
+ PackedArray.h SharedMemory.h Variation.h SuperTranscriptome.h \
+ Transcriptome.h Transcript.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h SjdbClass.h mapThreadsSpawn.h \
+ ReadAlignChunk.h ReadAlign.h Stats.h OutSJ.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h GlobalVariables.h \
+ ThreadControl.h outputSJ.h sjdbInsertJunctions.h
+Transcriptome_geneCountsAddAlign.o: Transcriptome_geneCountsAddAlign.cpp \
+ Transcriptome.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h serviceFuns.cpp
+ReadAlign_mappedFilter.o: ReadAlign_mappedFilter.cpp ReadAlign.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ Stats.h OutSJ.h Transcriptome.h Quantifications.h AlignVsTranscript.h \
+ ReadAnnotations.h SoloCommon.h BAMoutput.h ChimericDetection.h \
+ ChimericAlign.h ChimericSegment.h SoloRead.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloReadFeature.h SoloReadFeatureStats.h \
+ SpliceGraph.h GTF.h SjdbClass.h
+sysRemoveDir.o: sysRemoveDir.cpp
+ReadAlign_stitchWindowSeeds.o: ReadAlign_stitchWindowSeeds.cpp \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Transcript.h \
+ Variation.h Genome.h PackedArray.h SharedMemory.h SuperTranscriptome.h \
+ ReadAlign.h Stats.h OutSJ.h Transcriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h BAMoutput.h \
+ ChimericDetection.h ChimericAlign.h ChimericSegment.h SoloRead.h \
+ SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ stitchAlignToTranscript.h extendAlign.h binarySearch2.h ErrorWarning.h
+ReadAlign_oneRead.o: ReadAlign_oneRead.cpp ReadAlign.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ readLoad.h SequenceFuns.h ErrorWarning.h
+SoloReadBarcode_getCBandUMI.o: SoloReadBarcode_getCBandUMI.cpp \
+ SoloReadBarcode.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h SoloReadBarcodeStats.h serviceFuns.cpp SequenceFuns.h
+Transcript_variationOutput.o: Transcript_variationOutput.cpp Transcript.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h
+sjdbLoadFromStream.o: sjdbLoadFromStream.cpp sjdbLoadFromStream.h \
+ SjdbClass.h IncludeDefine.h VERSION
+Transcript_alignScore.o: Transcript_alignScore.cpp Transcript.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h
+GTF_superTranscript.o: GTF_superTranscript.cpp GTF.h IncludeDefine.h \
+ VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h \
+ TimeFunctions.h ParametersChimeric.h ParametersSolo.h SoloBarcode.h \
+ SoloFeatureTypes.h ParametersGenome.h SjdbClass.h Genome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h streamFuns.h \
+ genomeParametersWrite.h
+ReadAlign_peOverlapMergeMap.o: ReadAlign_peOverlapMergeMap.cpp \
+ ReadAlign.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h Transcriptome.h \
+ Quantifications.h AlignVsTranscript.h ReadAnnotations.h SoloCommon.h \
+ BAMoutput.h ChimericDetection.h ChimericAlign.h ChimericSegment.h \
+ SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h SoloReadFeature.h \
+ SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h SequenceFuns.h
+ReadAlign_quantTranscriptome.o: ReadAlign_quantTranscriptome.cpp \
+ Transcriptome.h IncludeDefine.h VERSION Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h Quantifications.h \
+ AlignVsTranscript.h ReadAnnotations.h SoloCommon.h ReadAlign.h Stats.h \
+ OutSJ.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ serviceFuns.cpp
+soloInputFeatureUMI.o: soloInputFeatureUMI.cpp soloInputFeatureUMI.h \
+ IncludeDefine.h VERSION SoloReadFeature.h Parameters.h InOutStreams.h \
+ htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h Transcript.h Variation.h Genome.h PackedArray.h \
+ SharedMemory.h SuperTranscriptome.h SoloReadBarcode.h \
+ SoloReadBarcodeStats.h SoloCommon.h SoloReadFeatureStats.h \
+ ReadAnnotations.h binarySearch2.h
+SoloFeature_quantTranscript.o: SoloFeature_quantTranscript.cpp \
+ SoloFeature.h IncludeDefine.h VERSION ReadAlignChunk.h Parameters.h \
+ InOutStreams.h htslib/htslib/bgzf.h ParameterInfo.h TimeFunctions.h \
+ ParametersChimeric.h ParametersSolo.h SoloBarcode.h SoloFeatureTypes.h \
+ ParametersGenome.h ReadAlign.h Transcript.h Variation.h Genome.h \
+ PackedArray.h SharedMemory.h SuperTranscriptome.h Stats.h OutSJ.h \
+ Transcriptome.h Quantifications.h AlignVsTranscript.h ReadAnnotations.h \
+ SoloCommon.h BAMoutput.h ChimericDetection.h ChimericAlign.h \
+ ChimericSegment.h SoloRead.h SoloReadBarcode.h SoloReadBarcodeStats.h \
+ SoloReadFeature.h SoloReadFeatureStats.h SpliceGraph.h GTF.h SjdbClass.h \
+ streamFuns.h SequenceFuns.h serviceFuns.cpp
+Genome_consensusSequence.o: Genome_consensusSequence.cpp Genome.h \
+ IncludeDefine.h VERSION Parameters.h InOutStreams.h htslib/htslib/bgzf.h \
+ ParameterInfo.h TimeFunctions.h ParametersChimeric.h ParametersSolo.h \
+ SoloBarcode.h SoloFeatureTypes.h ParametersGenome.h PackedArray.h \
+ SharedMemory.h Variation.h SuperTranscriptome.h SequenceFuns.h \
+ streamFuns.h
+bam_cat.o: bam_cat.c bam_cat.h htslib/htslib/sam.h htslib/htslib/hts.h \
+ htslib/htslib/bgzf.h

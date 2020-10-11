@@ -1,0 +1,9 @@
+com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.class
+com/github/xmuyulab/sparkscRNAseq/algorithms/tools/StringToSamTool.class
+com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat.class
+com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarAlign.class
+com/github/xmuyulab/sparkscRNAseq/algorithms/tools/STARCommandGenerate.class
+com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInit.class
+com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat$FastqR1RecordReader.class
+com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat$FastqR2RecordReader.class
+com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat.class
