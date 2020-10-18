@@ -12,11 +12,11 @@ object StringUtils {
   }
 
   def isNotEmpty(str:String):Boolean={
-    str!=null&&str.length>0
+    str!=null && str.length>0
   }
 
   def isEmpty(str:String):Boolean={
-    str==null||str.length==0
+    str==null || str.length==0
   }
 
 }

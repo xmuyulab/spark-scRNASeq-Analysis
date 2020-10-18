@@ -7,9 +7,11 @@ import org.apache.hadoop.io.Text
 
 trait FileLoader {
 
-  def loadFastqR1ToRdd(sc:SparkContext,filePath:String):RDD[(Text,Text)];
+  def loadWhitelistToRdd(sc: SparkContext, filePath: String): RDD[String]
 
-  def loadFastqR2ToRdd(sc:SparkContext,filePath:String):RDD[(Text,Text)];
+  def loadFastqR1ToRdd(sc: SparkContext, filePath: String): RDD[(Text, Text)];
+
+  def loadFastqR2ToRdd(sc: SparkContext, filePath: String): RDD[(Text, Text)];
 
   def loadFastqPairToRdd(sc: SparkContext,
                          filePath1: String,

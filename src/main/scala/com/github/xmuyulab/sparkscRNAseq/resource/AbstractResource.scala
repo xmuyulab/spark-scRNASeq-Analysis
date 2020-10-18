@@ -1,12 +1,12 @@
-package com.github.xmuyulab.sparkscRNAseq.resource
+// package com.github.xmuyulab.sparkscRNAseq.resource
 
-abstract class AbstractResource(resKey: String) extends Resource {
+// abstract class AbstractResource(resKey: String) extends Resource {
 
-  val key: String = resKey
+//   val key: String = resKey
 
-  var setFlag: Boolean = false
+//   var setFlag: Boolean = false
 
-  override def isSet: Boolean = {
-    setFlag
-  }
-}
+//   override def isSet: Boolean = {
+//     setFlag
+//   }
+// }

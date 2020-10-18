@@ -1,13 +1,13 @@
-package com.github.xmuyulab.sparkscRNAseq.resource
+// package com.github.xmuyulab.sparkscRNAseq.resource
 
-/**
- * Author:liuyu
- */
+// /**
+//  * Author:liuyu
+//  */
 
-trait Resource {
+// trait Resource {
 
-  val key: String
+//   val key: String
 
-  def isSet: Boolean
+//   def isSet: Boolean
 
-}
+// }
