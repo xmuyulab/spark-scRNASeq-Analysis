@@ -18,9 +18,9 @@ JNIEXPORT void JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adapter
 /*
  * Class:     com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarAlign
  * Method:    runStar
- * Signature: (J[[C)Ljava/lang/String;
+ * Signature: (J[[C)[Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarAlign_runStar
+JNIEXPORT jobjectArray JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarAlign_runStar
   (JNIEnv *, jobject, jlong, jobjectArray);
 
 #ifdef __cplusplus

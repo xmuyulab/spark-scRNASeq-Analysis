@@ -1,3 +1,11 @@
+/*
+ * @author: 6liuyu123
+ * @date: Do not edit
+ */
+/*
+ * @author: 6liuyu123
+ * @date: Do not edit
+ */
 package com.github.xmuyulab.sparkscRNAseq.algorithms.adapter;
 
 import com.github.xmuyulab.sparkscRNAseq.data.basic.FastqRecord;
@@ -5,6 +13,7 @@ import com.github.xmuyulab.sparkscRNAseq.utils.ArgsUtils;
 import com.github.xmuyulab.sparkscRNAseq.algorithms.tools.StringToSamTool;
 import java.io.IOException;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -53,9 +62,7 @@ public class StarInitAdapter {
       reads.add(fRecord.toString());
     }
     StringToSamTool stringToSamTool = new StringToSamTool();
-    List<String> res;
-    res = stringToSamTool.StringToSam(starAlign.startAlign()); 
-    return res;
+    return stringToSamTool.StringToSam(starAlign.startAlign()); 
   }
 
 }

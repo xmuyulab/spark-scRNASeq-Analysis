@@ -1,3 +1,7 @@
+/*
+ * @author: 6liuyu123
+ * @date: Do not edit
+ */
 #ifndef INOUTSTREAMS_DEF
 #define INOUTSTREAMS_DEF
 
@@ -13,6 +17,7 @@ class InOutStreams {
     ofstream outChimSAM, outChimJunction, logMain, logProgress, logFinal, outUnmappedReadsStream[MAX_N_MATES];
     stringstream readIn[MAX_N_MATES];
     stringstream outSAMString;
+    std::vector<string> vOutSam;
 
     //compilation-optional streams
     ofstream outLocalChains;

@@ -153,7 +153,7 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
     @Override
     public Text getCurrentValue(){
       tmp1 = currentValue1.toString();
-      return new Text(currentValue2.toString().substring(16) + tmp1.substring(0, tmp1.length() - 16));
+      return new Text(currentValue2.toString().substring(16, currentValue2.toString().length()-1));
     }
 
     @Override

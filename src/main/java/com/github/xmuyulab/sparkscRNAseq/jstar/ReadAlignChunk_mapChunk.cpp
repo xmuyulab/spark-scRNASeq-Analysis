@@ -2,6 +2,7 @@
 #include "GlobalVariables.h"
 #include "ThreadControl.h"
 #include "ErrorWarning.h"
+#include <string>
 #include SAMTOOLS_BGZF_H
 
 void ReadAlignChunk::mapChunk() {//map one chunk. Input reads stream has to be setup in RA->readInStream[ii]
@@ -45,8 +46,11 @@ void ReadAlignChunk::mapChunk() {//map one chunk. Input reads stream has to be s
                 } else {//standard way, directly into Aligned.out.sam file
                     //SAM output
                     if (P.runThreadN>1) pthread_mutex_lock(&g_threadChunks.mutexOutSAM);
-                    P.inOut->outSAMString << chunkOutBAM;
-                    //P.inOut->outSAM->write(chunkOutBAM,chunkOutBAMtotal);
+                    // P.inOut->outSAMString << chunkOutBAM;
+                    std::string tempSAMline(chunkOutBAM);
+                    tempSAMline = tempSAMline.substr(0, chunkOutBAMtotal);
+                    P.inOut->vOutSam.push_back(tempSAMline);
+                    // P.inOut->outSAM->write(chunkOutBAM,chunkOutBAMtotal);
                     P.inOut->outSAM->clear();//in case 0 bytes were written which could set fail bit
                     if (P.runThreadN>1) pthread_mutex_unlock(&g_threadChunks.mutexOutSAM);
                 };

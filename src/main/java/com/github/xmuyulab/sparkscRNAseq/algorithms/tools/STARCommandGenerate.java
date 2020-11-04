@@ -1,3 +1,7 @@
+/*
+ * @author: 6liuyu123
+ * @date: Do not edit
+ */
 package com.github.xmuyulab.sparkscRNAseq.algorithms.tools;
 
 import com.github.xmuyulab.sparkscRNAseq.utils.ArgsUtils;
@@ -13,11 +17,11 @@ public class STARCommandGenerate {
         		commandLine[i][j] = '\0';
       		}
     	}
-		commandLine[0] = "STAR\0".toCharArray();
+		   commandLine[0] = "STAR\0".toCharArray();
     	commandLine[1] = "--runThreadN\0".toCharArray();
-    	commandLine[2] = argsUtils.getSTARTs().toCharArray();
+    	commandLine[2] = argsUtils.getStarThreads().toCharArray();
     	commandLine[3] = "--genomeDir\0".toCharArray();
-    	commandLine[4] = "/root/data/STAR_INDEX\0".toCharArray();
+    	commandLine[4] = "/mnt/data/GRCh38_human/star_2.7.5a_index\0".toCharArray();
     	commandLine[5] = "--readFilesIn\0".toCharArray();
     	commandLine[6] = "mm_100_R2_extracted.fastq.gz\0".toCharArray();
     	commandLine[7] = "--outFilterMultimapNmax\0".toCharArray();

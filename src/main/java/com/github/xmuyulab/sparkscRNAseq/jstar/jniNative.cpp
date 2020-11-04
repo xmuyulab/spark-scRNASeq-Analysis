@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -75,7 +76,7 @@ JNIEXPORT void JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adapter
  * Method:    runStar
  * Signature: (J[[C)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarAlign_runStar
+JNIEXPORT jobjectArray JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adapter_StarAlign_runStar
     (JNIEnv * env, jobject, jlong cAddress, jobjectArray commandLine) {
       //  恢复命令行
       jint i, j, col;
@@ -222,9 +223,22 @@ JNIEXPORT jstring JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adap
     };
 
     time(&g_statsAll.timeFinishMap);
-    std::string oss = P.inOut->outSAMString.str();
-    char* cs = new char[oss.length()+1];
-    strcpy(cs, oss.c_str());
+    //std::string oss = P.inOut->outSAMString.str();
+    //char* cs = new char[oss.length()+1];
+    //strcpy(cs, oss.c_str());
+    // long oi;
+    // std::string tmp = "", temp = "";
+    // std::vector<std::string> vc;
+    // long countTimes = 0;
+    // for (oi = 1; getline(P.inOut->outSAMString, tmp, '\n'); oi++) {
+    //     temp += (tmp+'\n');
+    //     countTimes++;
+    //     if (oi%32786 == 0) {
+    //         vc.push_back(temp);
+    //         temp = "";
+    //         oi = 0;
+    //     }
+    // }
 
     //std::cout << P.inOut->outSAMString.rdbuf();
     *P.inOut->logStdOut << timeMonthDayTime(g_statsAll.timeFinishMap) << " ..... finished mapping\n" <<flush;
@@ -282,8 +296,13 @@ JNIEXPORT jstring JNICALL Java_com_github_xmuyulab_sparkscRNAseq_algorithms_adap
         genomeMain.sharedMemory = NULL;
     };
     P.inOut->logMain << "..................Here we run all content of STAR..................\n";
-
-    delete P.inOut; //to close files
-    return env->NewStringUTF(cs);
-      
+    P.inOut->logMain << "*************************************************" << P.inOut->vOutSam.size();
+    long vSize = P.inOut->vOutSam.size();
+    jobjectArray res = (jobjectArray)env->NewObjectArray(vSize, env->FindClass("java/lang/String"), env->NewStringUTF(""));
+    for (long oi = 0; oi < vSize; oi++) {
+        env->SetObjectArrayElement(res, oi, env->NewStringUTF(((char*)P.inOut->vOutSam[oi].c_str())));
     }
+    delete P.inOut; //to close files
+
+    return res;
+}

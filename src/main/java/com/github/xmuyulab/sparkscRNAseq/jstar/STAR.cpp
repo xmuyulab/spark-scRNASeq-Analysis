@@ -238,6 +238,8 @@ int main(int argInN, char* argIn[]) {
         genomeMain.sharedMemory = NULL;
     };
 
+    
+
     delete P.inOut; //to close files
 
     return 0;
