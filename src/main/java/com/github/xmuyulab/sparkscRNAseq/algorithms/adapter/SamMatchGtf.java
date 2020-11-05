@@ -40,9 +40,9 @@ public class SamMatchGtf {
         }
         for (int i = 0; i < vertexNum; i++) {
             if (!visited[i]) {
+                res++;
                 dfs(graph, visited, i);
             }
-            res++;
         }
         return res;
 
@@ -59,6 +59,7 @@ public class SamMatchGtf {
         for (Map.Entry<String, Integer> entry : m.entrySet()) {
             barcode[i] = entry.getKey();
             times[i] = entry.getValue();
+            graph.add(i, new ArrayList<Integer>());
             i++;
         }
         int barcodeLength = barcode[0].length();
@@ -92,7 +93,6 @@ public class SamMatchGtf {
         int samLength = samArray.length;
         int gtfLength = gtfArray.length;
         int target, begin, end, i, j = 0, k;
-        Map<String, Integer> mi = new HashMap<String, Integer>();
         
         // sort samArray according to position
         Arrays.sort(samArray, new Comparator<String[]>() {
@@ -115,8 +115,8 @@ public class SamMatchGtf {
                 if (target >= begin) {
                     if (target <= end) {
                         String tmp = gtfArray[k][2] + "\t" + samArray[i][0];
-                        mi = m.getOrDefault(tmp, new HashMap<String, Integer>());
-                        mi.put(samArray[i][1], mi.getOrDefault(samArray[i], 0) + 1);
+                        Map<String, Integer> mi = m.getOrDefault(tmp, new HashMap<String, Integer>());
+                        mi.put(samArray[i][1], mi.getOrDefault(samArray[i][1], 0) + 1);
                         m.put(tmp, mi);
                         j = k;
                         break;
