@@ -35,6 +35,9 @@ object scAnalysis {
     @Option(required = false, name = "-gtf", usage = "set gtf's path")
     val gtf: String = StringUtils.EMPTY
 
+    @Option(required = false, name = "-worker", usage = "set worker number")
+    val worker: String = StringUtils.EMPTY
+
     @Argument
     val arguments: util.ArrayList[String] = new util.ArrayList[String]()
 
@@ -52,7 +55,7 @@ object scAnalysis {
             conf.setMaster("local[%d]".format(Runtime.getRuntime.availableProcessors()))
         }
         val sc = new SparkContext(conf)
-        val argsUtils = new ArgsUtils(fastq1, fastq2, cellNumber, STARThreads, gtf)
+        val argsUtils = new ArgsUtils(fastq1, fastq2, cellNumber, STARThreads, gtf, worker)
         val extractFastqRdd = FindAndJoinProcess.findAndJoin(sc, argsUtils)
         val samRdd = JNIStarInitProcess.runStar(sc, extractFastqRdd, argsUtils)
         FeatureAndCount.feature(sc, samRdd, argsUtils)

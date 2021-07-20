@@ -18,7 +18,7 @@ object FeatureAndCount {
                                                  val row = line.split('\t')
                                                  val cb_umi = row(0).split('_')
                                                  (row(2), Array(cb_umi(1), cb_umi(2), row(3)))
-                                            }).groupByKey()
+                                            }).groupByKey(argsUtils.getWorker() * 32)
         val gtfListRdd = NormalFileLoader.loadGTFToRdd(sc, argsUtils.getGtfPath())
                                          .filter(line => {
                                              line.split('\t')(2).equals("exon")
@@ -26,11 +26,11 @@ object FeatureAndCount {
                                              val row = line.split('\t')
                                              val feature = row(8).split(";")
                                              (row(0),Array(row(3),row(4),feature(0).substring(9,feature(0).length()-1)))
-                                         }).groupByKey()
-        val matchRdd = samListRdd.join(gtfListRdd)
+                                         }).groupByKey(argsUtils.getWorker() * 32)
+        val sMatchG = new SamMatchGtf()
+        samListRdd.join(gtfListRdd)
                 .flatMap(
                     line => {
-                        val sMatchG = new SamMatchGtf()
                         sMatchG.samMatchGtf(line._2._1.iterator.toArray, line._2._2.iterator.toArray).toArray
                     }
                 ).saveAsTextFile("file:///root/result")
