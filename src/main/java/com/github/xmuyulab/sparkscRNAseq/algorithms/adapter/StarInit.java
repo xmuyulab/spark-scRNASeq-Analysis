@@ -7,15 +7,13 @@ package com.github.xmuyulab.sparkscRNAseq.algorithms.adapter;
  * @date 2020/04/27
  */
 
-import java.io.IOException;
-
 public class StarInit {
 
-  protected long cAddress = 0L;
+  protected long cAddress;
 
   public native long getAddress();
 
-  public StarInit() throws IOException {
+  public StarInit() {
     cAddress = getAddress();
   }
 

@@ -5,14 +5,8 @@
 
 package com.github.xmuyulab.sparkscRNAseq.algorithms.adapter;
 
-import com.github.xmuyulab.sparkscRNAseq.data.basic.FastqRecord;
-import com.github.xmuyulab.sparkscRNAseq.utils.ArgsUtils;
-import com.github.xmuyulab.sparkscRNAseq.algorithms.tools.StringToSamTool;
-
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -45,21 +39,18 @@ public class SamMatchGtf {
             }
         }
         return res;
-
     }
 
-
     public int count(Map<String, Integer> m) {
-        // create graph
         int i, j, k, d, n = m.size();
         String[] barcode = new String[n];
         int[] times = new int[n];
-        ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>(n);
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<>(n);
         i = 0;
         for (Map.Entry<String, Integer> entry : m.entrySet()) {
             barcode[i] = entry.getKey();
             times[i] = entry.getValue();
-            graph.add(i, new ArrayList<Integer>());
+            graph.add(i, new ArrayList<>());
             i++;
         }
         int barcodeLength = barcode[0].length();
@@ -88,19 +79,17 @@ public class SamMatchGtf {
     }
 
     public List<String> samMatchGtf(String[][] samArray, String[][] gtfArray) {
-        List<String> res = new ArrayList<String>();
-        Map<String, Map<String, Integer>> m = new HashMap<String, Map<String, Integer>>();
+        List<String> res = new ArrayList<>();
+        Map<String, Map<String, Integer>> m = new HashMap<>();
         int samLength = samArray.length;
         int gtfLength = gtfArray.length;
         int target, begin, end, i, j = 0, k;
-        
-        // sort samArray according to position
+
         Arrays.sort(samArray, new Comparator<String[]>() {
             public int compare(String[] a, String[] b) {
                 return Integer.parseInt(a[2]) - Integer.parseInt(b[2]);
             }
         });
-        // sort gtfArray according to start position
         Arrays.sort(gtfArray, new Comparator<String[]>() {
             public int compare(String[] a, String[] b) {
                 return Integer.parseInt(a[0]) - Integer.parseInt(b[0]);
@@ -115,7 +104,7 @@ public class SamMatchGtf {
                 if (target >= begin) {
                     if (target <= end) {
                         String tmp = gtfArray[k][2] + "\t" + samArray[i][0];
-                        Map<String, Integer> mi = m.getOrDefault(tmp, new HashMap<String, Integer>());
+                        Map<String, Integer> mi = m.getOrDefault(tmp, new HashMap<>());
                         mi.put(samArray[i][1], mi.getOrDefault(samArray[i][1], 0) + 1);
                         m.put(tmp, mi);
                         j = k;
@@ -131,11 +120,10 @@ public class SamMatchGtf {
             }
         }
 
-        int mLength = m.size(), times;
-
+        int times;
         Iterator<Map.Entry<String, Map<String, Integer>>> entries = m.entrySet().iterator();
         while (entries.hasNext()) {
-            Map.Entry entry = (Map.Entry)entries.next();
+            Map.Entry entry = entries.next();
             String cellAndUMI = (String)entry.getKey();
             times = count((Map<String, Integer>)entry.getValue());
             res.add(cellAndUMI + "\t" + times);

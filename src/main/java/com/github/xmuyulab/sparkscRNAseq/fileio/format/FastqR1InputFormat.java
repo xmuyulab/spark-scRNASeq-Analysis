@@ -7,9 +7,6 @@ package com.github.xmuyulab.sparkscRNAseq.fileio.format;
  * @date 2020/03/02
  */
 
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.InputStream;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -23,6 +20,10 @@ import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.util.LineReader;
+
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
 
 
 public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
@@ -41,22 +42,19 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
 
     private long pos;
 
-    private Path file;
+    private final Path file;
 
-    //
-    private LineReader lineReader;
-    //
-    private InputStream inputStream;
-    //
+    private final LineReader lineReader;
+
+    private final InputStream inputStream;
+
     private Text currentValue1;
     private Text currentValue2;
     private Text currentValue3;
     private Text currentValue4;
-    private String tmp1;
-    //
-    private byte[] newline = "\n".getBytes();
 
-    //
+    private final byte[] newline = "\n".getBytes();
+
     private static final int MAX_LINE_LENGTH=10000;
 
     //A section of an input file
@@ -97,7 +95,6 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
 
     private void positionAtFirstRecord(FSDataInputStream stream) throws IOException {
       Text buffer = new Text();
-
       //seek to the given offset
       stream.seek(start);
       //A class that provides a line reader from an input stream.Depending on the constructor used,
@@ -152,7 +149,6 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
 
     @Override
     public Text getCurrentValue(){
-      tmp1 = currentValue1.toString();
       return new Text(currentValue2.toString().substring(16, currentValue2.toString().length()-1));
     }
 
