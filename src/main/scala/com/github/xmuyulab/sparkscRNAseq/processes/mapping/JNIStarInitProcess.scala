@@ -18,7 +18,7 @@ object JNIStarInitProcess {
         val starLibPathBD =  sc.broadcast(starLibPath).value
         val samRdd = extractedFastq.repartition(argsUtils.getWorker()).mapPartitions(it => {
                     StarInitAdapter.pairAlign(starLibPathBD, it.toSeq, argsUtils).iterator
-                }).filter(_.contains("NH:i:1")).filter (line =>
+                }).repartition(argsUtils.getTotalCore()).filter(_.contains("NH:i:1")).filter (line =>
                     line.split('\t')(13).substring(5).toInt > 35
                 )
         samRdd

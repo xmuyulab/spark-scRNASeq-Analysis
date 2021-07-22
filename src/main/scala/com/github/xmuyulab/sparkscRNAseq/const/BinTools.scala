@@ -29,13 +29,11 @@ object BinTools {
         val tmpPath = FileUtils.join(binDirPath, "libSTAR.so")
         if (tmpPath.startsWith("file:"))
             tmpPath.substring(5) else tmpPath
-  }
+    }
 
-  val processOptimize={
-    val properties=new Properties()
-    properties.load(new FileInputStream(confPath))
-    properties.getProperty("processOptimize").toBoolean
-  }
-
-
+    val processOptimize={
+        val properties=new Properties()
+        properties.load(new FileInputStream(confPath))
+        properties.getProperty("processOptimize").toBoolean
+    }
 }
