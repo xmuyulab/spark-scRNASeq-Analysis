@@ -65,10 +65,10 @@ public class SamMatchGtf {
                     }
                 }
                 if (d < 2) {
-                    if (times[i] >= 2*times[j]) {
+                    if (times[i] >= 2 * times[j]) {
                         graph.get(i).add(j);
                     } else {
-                        if (times[j] >= 2*times[i]) {
+                        if (times[j] >= 2 * times[i]) {
                             graph.get(j).add(i);
                         }
                     }

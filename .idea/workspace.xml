@@ -31,13 +31,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bfedd519-a158-4864-adf5-1cf3df2a3514" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR1InputFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/fileio/format/FastqR2InputFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/SamMatchGtf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/SamMatchGtf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/featurecount/FeatureAndCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/featurecount/FeatureAndCount.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/finding/FindAndJoinProcess.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/finding/FindAndJoinProcess.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/mapping/JNIStarInitProcess.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/mapping/JNIStarInitProcess.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/scAnalysis.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/scAnalysis.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/utils/ArgsUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/utils/ArgsUtils.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +73,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.2" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="scala_project_settings_configurable.last_selected_tab_index" value="2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -133,7 +130,9 @@
       <workItem from="1626342040388" duration="3182000" />
       <workItem from="1626351346995" duration="257000" />
       <workItem from="1626449526368" duration="1197000" />
-      <workItem from="1626748524890" duration="7109000" />
+      <workItem from="1626748524890" duration="10586000" />
+      <workItem from="1626796435105" duration="1480000" />
+      <workItem from="1626878928395" duration="8470000" />
     </task>
     <servers />
   </component>

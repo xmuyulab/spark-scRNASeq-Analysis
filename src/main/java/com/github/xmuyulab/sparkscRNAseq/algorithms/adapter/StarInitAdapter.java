@@ -23,43 +23,42 @@ import java.util.List;
  * @date 2020/04/27
  */
 public class StarInitAdapter {
+    private static volatile StarInit starInitInstance = null;
 
-  private static volatile StarInit starInitInstance = null;
-
-  private static StarInit getStarInitInstance(String starJNILibPath) throws IOException {
-    if (starInitInstance == null) {
-      synchronized (StarInitAdapter.class) {
+    // TODO 每个worker可以用这个方式只读一次STAR的信息
+    private static StarInit getStarInitInstance(String starJNILibPath) throws IOException {
         if (starInitInstance == null) {
-          System.load(starJNILibPath);
-          starInitInstance = new StarInit();
+            synchronized (StarInitAdapter.class) {
+                if (starInitInstance == null) {
+                    System.load(starJNILibPath);
+                    starInitInstance = new StarInit();
+                }
+            }
         }
-      }
+        return starInitInstance;
     }
-    return starInitInstance;
-  }
 
-  public static List<String> pairAlign(String starJNILibPath, List<FastqRecord> fastqRecords, ArgsUtils argsUtils) {
-    StarInit starInit;
-    StarAlign starAlign = null;
-    try {
-      starInit = getStarInitInstance(starJNILibPath);
-      starAlign = new StarAlign(starInit, argsUtils);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    int chunkSize = 2000;
-    List<String> reads = new ArrayList<>(chunkSize);
-    for(FastqRecord fRecord : fastqRecords) {
-      if (reads.size() == chunkSize) {
+    public static List<String> pairAlign(String starJNILibPath, List<FastqRecord> fastqRecords, ArgsUtils argsUtils) {
+        StarInit starInit;
+        StarAlign starAlign = null;
+        try {
+            starInit = getStarInitInstance(starJNILibPath);
+            starAlign = new StarAlign(starInit, argsUtils);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int chunkSize = 2000;
+        List<String> reads = new ArrayList<>(chunkSize);
+        for(FastqRecord fRecord : fastqRecords) {
+            if (reads.size() == chunkSize) {
+                assert starAlign != null;
+                starAlign.tranFastq(reads);
+                reads.clear();
+            }
+            reads.add(fRecord.toString());
+        }
+        StringToSamTool stringToSamTool = new StringToSamTool();
         assert starAlign != null;
-        starAlign.tranFastq(reads);
-        reads.clear();
-      }
-      reads.add(fRecord.toString());
+        return stringToSamTool.StringToSam(starAlign.startAlign());
     }
-    StringToSamTool stringToSamTool = new StringToSamTool();
-    assert starAlign != null;
-    return stringToSamTool.StringToSam(starAlign.startAlign());
-  }
-
 }
