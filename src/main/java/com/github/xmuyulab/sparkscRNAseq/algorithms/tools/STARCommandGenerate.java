@@ -21,9 +21,9 @@ public class STARCommandGenerate {
 		commandLine[1] = "--runThreadN\0".toCharArray();
 		commandLine[2] = argsUtils.getStarThreads().toCharArray();
 		commandLine[3] = "--genomeDir\0".toCharArray();
-		commandLine[4] = "/mnt/data/GRCh38_human/star_2.7.5a_index\0".toCharArray();
+		commandLine[4] = (argsUtils.getGenomedir()+"\0").toCharArray();
 		commandLine[5] = "--readFilesIn\0".toCharArray();
-		commandLine[6] = "mm_100_R2_extracted.fastq.gz\0".toCharArray();
+		commandLine[6] = "not_used_now\0".toCharArray();
 		commandLine[7] = "--outFilterMultimapNmax\0".toCharArray();
 		commandLine[8] = "1\0".toCharArray();
 		commandLine[9] = "--outSAMtype\0".toCharArray();

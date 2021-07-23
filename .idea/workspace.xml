@@ -31,10 +31,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bfedd519-a158-4864-adf5-1cf3df2a3514" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/SamMatchGtf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/SamMatchGtf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/adapter/StarInitAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/featurecount/FeatureAndCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/processes/featurecount/FeatureAndCount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/tools/STARCommandGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xmuyulab/sparkscRNAseq/algorithms/tools/STARCommandGenerate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/scAnalysis.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/scAnalysis.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/utils/ArgsUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/utils/ArgsUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/utils/FileUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/github/xmuyulab/sparkscRNAseq/utils/FileUtils.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -80,13 +79,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,7 +133,8 @@
       <workItem from="1626449526368" duration="1197000" />
       <workItem from="1626748524890" duration="10586000" />
       <workItem from="1626796435105" duration="1480000" />
-      <workItem from="1626878928395" duration="8470000" />
+      <workItem from="1626878928395" duration="10404000" />
+      <workItem from="1627025965534" duration="1723000" />
     </task>
     <servers />
   </component>

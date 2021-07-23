@@ -32,13 +32,16 @@ object scAnalysis {
     @Option(required = false, name = "-STARThreads", usage = "set STAR's threads")
     val STARThreads: String = StringUtils.EMPTY
 
+    @Option(required = false, name = "-genomeDir", usage = "set STAR's genomeDir")
+    val genomeDir: String = StringUtils.EMPTY
+
     @Option(required = false, name = "-gtf", usage = "set gtf's path")
     val gtf: String = StringUtils.EMPTY
 
     @Option(required = false, name = "-worker", usage = "set worker number")
     val worker: String = StringUtils.EMPTY
 
-    @Option(required = false, name = "-totalCore", usage = "set worker number")
+    @Option(required = false, name = "-totalCore", usage = "set core number")
     val totalCore: String = StringUtils.EMPTY
 
     @Argument
@@ -58,7 +61,7 @@ object scAnalysis {
             conf.setMaster("local[%d]".format(Runtime.getRuntime.availableProcessors()))
         }
         val sc = new SparkContext(conf)
-        val argsUtils = new ArgsUtils(fastq1, fastq2, cellNumber, STARThreads, gtf, worker, totalCore)
+        val argsUtils = new ArgsUtils(fastq1, fastq2, cellNumber, STARThreads, gtf, genomeDir, worker, totalCore)
         val extractFastqRdd = FindAndJoinProcess.findAndJoin(sc, argsUtils)
         val samRdd = JNIStarInitProcess.runStar(sc, extractFastqRdd, argsUtils)
         FeatureAndCount.feature(sc, samRdd, argsUtils)
