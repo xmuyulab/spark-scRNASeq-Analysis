@@ -26,13 +26,13 @@ object FeatureAndCount {
                                              val row = line.split('\t')
                                              val feature = row(8).split(";")
                                              (row(0),Array(row(3),row(4),feature(0).substring(9,feature(0).length()-1)))
-                                         }).groupByKey(argsUtils.getWorker() * 32)
-        val sMatchG = new SamMatchGtf()
+                                         }).groupByKey(argsUtils.getWorker() * 64)
         samListRdd.join(gtfListRdd)
                 .flatMap(
                     line => {
+                        val sMatchG = new SamMatchGtf()
                         sMatchG.samMatchGtf(line._2._1.iterator.toArray, line._2._2.iterator.toArray).toArray
                     }
-                ).saveAsTextFile("file:///root/result")
+                ).saveAsTextFile("file:///mnt/spark/result")
     }
 }

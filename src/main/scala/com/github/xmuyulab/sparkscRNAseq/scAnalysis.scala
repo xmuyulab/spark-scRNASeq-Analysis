@@ -63,6 +63,7 @@ object scAnalysis {
         val sc = new SparkContext(conf)
         val argsUtils = new ArgsUtils(fastq1, fastq2, cellNumber, STARThreads, gtf, genomeDir, worker, totalCore)
         val extractFastqRdd = FindAndJoinProcess.findAndJoin(sc, argsUtils)
+        // @Test extractFastqRdd.saveAsTextFile("file:///mnt/spark/result")
         val samRdd = JNIStarInitProcess.runStar(sc, extractFastqRdd, argsUtils)
         FeatureAndCount.feature(sc, samRdd, argsUtils)
     }
