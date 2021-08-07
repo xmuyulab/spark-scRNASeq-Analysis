@@ -7,18 +7,14 @@ package com.github.xmuyulab.sparkscRNAseq.algorithms.adapter;
  * @date 2020/04/27
  */
 
-import java.io.IOException;
-
 public class StarInit {
+    protected long cAddress;
 
-  protected long cAddress = 0L;
+    public native long getAddress();
 
-  public native long getAddress();
-
-  public StarInit() throws IOException {
+    public StarInit() {
     cAddress = getAddress();
   }
-
 }
 
 //  ./STAR --runThreadN 4 --genomeDir /mnt/md0/liuyu/STARExample --readFilesIn /mnt/md0/liuyu/hgmm_100_R2_extracted.fastq.gz --readFilesCommand zcat --outFilterMultimapNmax 1 --outSAMtype BAM SortedByCoordinate

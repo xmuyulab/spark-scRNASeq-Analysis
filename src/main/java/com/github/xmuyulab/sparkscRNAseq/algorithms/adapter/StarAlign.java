@@ -1,21 +1,20 @@
 package com.github.xmuyulab.sparkscRNAseq.algorithms.adapter;
 
-import java.io.*;
-import java.util.List;
-import com.github.xmuyulab.sparkscRNAseq.data.basic.FastqRecord;
-import com.github.xmuyulab.sparkscRNAseq.utils.ArgsUtils;
 import com.github.xmuyulab.sparkscRNAseq.algorithms.tools.STARCommandGenerate;
+import com.github.xmuyulab.sparkscRNAseq.utils.ArgsUtils;
+
+import java.util.List;
 
 public class StarAlign {
-    private StarInit starInit = null;
-    private ArgsUtils argsUtils = null;
+    private final StarInit starInit;
+    private final ArgsUtils argsUtils;
     
     public StarAlign(StarInit starInit, ArgsUtils argsUtils) {
         this.starInit = starInit;
         this.argsUtils = argsUtils;
     }
 
-    public void tranFastq(final List<String> reads) throws IOException {
+    public void tranFastq(final List<String> reads) {
         tranFastq(starInit.cAddress, reads.toArray(new String[reads.size()]));
     }
 

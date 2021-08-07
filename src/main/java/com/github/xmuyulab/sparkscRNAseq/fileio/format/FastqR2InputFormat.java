@@ -6,9 +6,6 @@ package com.github.xmuyulab.sparkscRNAseq.fileio.format;
  * @author liuyu
  * @date 2020/03/09
  */
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.InputStream;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -22,6 +19,10 @@ import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.util.LineReader;
+
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
 
 
 public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
@@ -155,11 +156,10 @@ public class FastqR2InputFormat extends FileInputFormat<Text,Text> {
     @Override
     public Text getCurrentValue(){
       return new Text(currentValue2.toString().substring(0,currentValue2.toString().length()-1)+"\n+\n"+currentValue4);
-    //+ currentValue4.toString().substring(0,currentValue4.toString().length()-1)
     }
 
     @Override
-    public float getProgress() throws IOException, InterruptedException {
+    public float getProgress() {
       if (start == end)
         return 1.0f;
       else

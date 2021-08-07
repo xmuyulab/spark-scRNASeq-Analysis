@@ -131,7 +131,7 @@ public class SamMatchGtf {
             }
         }
 
-        int mLength = m.size(), times;
+        int times;
 
         Iterator<Map.Entry<String, Map<String, Integer>>> entries = m.entrySet().iterator();
         while (entries.hasNext()) {

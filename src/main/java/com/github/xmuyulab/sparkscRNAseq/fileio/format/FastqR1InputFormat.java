@@ -7,9 +7,6 @@ package com.github.xmuyulab.sparkscRNAseq.fileio.format;
  * @date 2020/03/02
  */
 
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.InputStream;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -24,116 +21,79 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.util.LineReader;
 
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
+
 
 public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
-  //The record reader breaks the data into key/value pairs for input to the Mapper
-  // @method initialize(InputSplit split,TaskAttemptContext context) throws IOException,InterruptedException
-  //  called once at initialization
-  // @method nextKeyValue() read the next key,value pair @return true if a key/value pair was read
-  // @method getCurrentKey() get the current key @return the current key or null if there is no current key
-  // @method getCurrentValue() get the current value @return the object that was read
-  // @method getProgress() the current progress of the record reader through its data
-  // @method close() close the record reader
-  public static class FastqR1RecordReader extends RecordReader<Text, Text> {
-    private long start;
+    public static class FastqR1RecordReader extends RecordReader<Text, Text> {
+        private long start;
+        private long end;
+        private long pos;
+        private final Path file;
 
-    private long end;
+        private final LineReader lineReader;
+        private final InputStream inputStream;
 
-    private long pos;
+        private Text currentValue1;
+        private Text currentValue2;
+        private Text currentValue3;
+        private Text currentValue4;
 
-    private Path file;
+        private final byte[] newline = "\n".getBytes();
+        private static final int MAX_LINE_LENGTH=10000;
 
-    //
-    private LineReader lineReader;
-    //
-    private InputStream inputStream;
-    //
-    private Text currentValue1;
-    private Text currentValue2;
-    private Text currentValue3;
-    private Text currentValue4;
-    private String tmp1;
-    //
-    private byte[] newline = "\n".getBytes();
+        //A section of an input file
+        public FastqR1RecordReader(Configuration conf, FileSplit split) throws IOException {
+            file = split.getPath();
+            start = split.getStart();
+            end = start+split.getLength();
+            FileSystem fs = file.getFileSystem(conf);
+            FSDataInputStream fileIn = fs.open(file);
+            CompressionCodecFactory codecFactory = new CompressionCodecFactory(conf);
+            CompressionCodec codec = codecFactory.getCodec(file);
 
-    //
-    private static final int MAX_LINE_LENGTH=10000;
-
-    //A section of an input file
-    public FastqR1RecordReader(Configuration conf, FileSplit split) throws IOException {
-      //The file containing this split's data
-      file = split.getPath();
-      //The position of the first byte
-      start = split.getStart();
-
-      end = start+split.getLength();
-
-      FileSystem fs = file.getFileSystem(conf);
-      FSDataInputStream fileIn = fs.open(file);
-
-      CompressionCodecFactory codecFactory = new CompressionCodecFactory(conf);
-      CompressionCodec codec = codecFactory.getCodec(file);
-
-      if (codec == null) { // no codec.  Uncompressed file.
-        positionAtFirstRecord(fileIn);
-        inputStream = fileIn;
-      } else {
-        // compressed file
-        if (start != 0) {
-          throw new RuntimeException("Start position for compressed file is not 0! (found " + start + ")");
+            if (codec == null) { // no codec.  Uncompressed file.
+                positionAtFirstRecord(fileIn);
+                inputStream = fileIn;
+            } else {
+                if (start != 0) {
+                    throw new RuntimeException("Start position for compressed file is not 0! (found " + start + ")");
+                }
+                inputStream = codec.createInputStream(fileIn);
+                end = Long.MAX_VALUE;
+            }
+            lineReader = new LineReader(inputStream);
         }
-
-        inputStream = codec.createInputStream(fileIn);
-        end = Long.MAX_VALUE; // read until the end of the file
-      }
-
-      lineReader = new LineReader(inputStream);
-    }
-
-    @Override
-    public void initialize(InputSplit split,TaskAttemptContext context) throws IOException,InterruptedException{
-
-    }
+        @Override
+        public void initialize(InputSplit split,TaskAttemptContext context) throws IOException,InterruptedException{ }
 
     private void positionAtFirstRecord(FSDataInputStream stream) throws IOException {
-      Text buffer = new Text();
-
-      //seek to the given offset
-      stream.seek(start);
-      //A class that provides a line reader from an input stream.Depending on the constructor used,
-      // lines will either be terminated by:'\n','\r','\r\n',a custom byte sequence delimiter
-      LineReader reader = new LineReader(stream);
-
-      int bytesRead = 0;
-      do {
-        //@return the number of bytes including the newline
-        bytesRead = reader.readLine(buffer, (int) Math.min(MAX_LINE_LENGTH, end - start));
-
-        int bufferLength = buffer.getLength();
-
-        if (bytesRead > 0 &&
-                (bufferLength <= 0 || buffer.getBytes()[0] != '@')) {
-          start += bytesRead;
-        } else {
-          long backtrackPosition = start + bytesRead;
-
-          bytesRead = reader.readLine(buffer, (int) Math.min(MAX_LINE_LENGTH, end - start));    //Sequence
-          bytesRead = reader.readLine(buffer, (int) Math.min(MAX_LINE_LENGTH, end - start));    //'+'
-
-          if (bytesRead > 0 && buffer.getLength() > 0 && buffer.getBytes()[0] == '+') {
-            break;
-          } else {
-            start = backtrackPosition;
-            stream.seek(start);
-            reader = new LineReader(stream);
-          }
-        }
-      } while (bytesRead > 0);
-
-      stream.seek(start);
-
-      pos = start;
-
+        Text buffer = new Text();
+        stream.seek(start);
+        LineReader reader = new LineReader(stream);
+        int bytesRead;
+        do {
+            bytesRead = reader.readLine(buffer, (int) Math.min(MAX_LINE_LENGTH, end - start));
+            int bufferLength = buffer.getLength();
+            if (bytesRead > 0 && (bufferLength <= 0 || buffer.getBytes()[0] != '@')) {
+                start += bytesRead;
+            } else {
+                long backtrackPosition = start + bytesRead;
+                reader.readLine(buffer, (int) Math.min(MAX_LINE_LENGTH, end - start));    //Sequence
+                bytesRead = reader.readLine(buffer, (int) Math.min(MAX_LINE_LENGTH, end - start));    //'+'
+                if (bytesRead > 0 && buffer.getLength() > 0 && buffer.getBytes()[0] == '+') {
+                    break;
+                } else {
+                    start = backtrackPosition;
+                    stream.seek(start);
+                    reader = new LineReader(stream);
+                }
+            }
+        } while (bytesRead > 0);
+        stream.seek(start);
+        pos = start;
     }
 
     @Override
@@ -152,7 +112,6 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
 
     @Override
     public Text getCurrentValue(){
-      tmp1 = currentValue1.toString();
       return new Text(currentValue2.toString().substring(16, currentValue2.toString().length()-1));
     }
 
@@ -179,9 +138,7 @@ public class FastqR1InputFormat extends FileInputFormat<Text, Text> {
         value2.clear();
         value3.clear();
         value4.clear();
-
         boolean gotData = lowLevelFastqR1Read(readName, value1, value2, value3, value4);
-
         return gotData;
       } catch(EOFException e) {
         throw new RuntimeException("unexpected end of file in fastq record");
